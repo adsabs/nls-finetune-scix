@@ -46,10 +46,9 @@ DOCTYPE_SYNONYMS: dict[str, str] = {
     "articles": "article",
     "journal article": "article",
     "journal articles": "article",
-    "paper": "article",
-    "papers": "article",
-    "publication": "article",
-    "publications": "article",
+    # NOTE: "paper"/"papers"/"publication"/"publications" intentionally OMITTED.
+    # These are colloquial terms for any research output, not specifically
+    # doctype:article. Mapping them to article excludes eprints/proceedings.
     # Thesis types
     "thesis": "phdthesis",
     "phd": "phdthesis",
@@ -111,10 +110,8 @@ BIBGROUP_SYNONYMS: dict[str, str] = {
     "keck": "Keck",
     "gemini": "Gemini",
     "subaru": "Subaru",
-    # Gravitational waves
+    # Gravitational wave observatory (NOT gravitational wave topics)
     "ligo": "LIGO",
-    "gravitational wave": "LIGO",
-    "gravitational waves": "LIGO",
 }
 
 COLLECTION_SYNONYMS: dict[str, str] = {
@@ -507,6 +504,8 @@ YEAR_PATTERNS: list[tuple[re.Pattern, str]] = [
     (re.compile(r"\bthrough\s+(\d{4})\b", re.IGNORECASE), "until"),
     # Relative: "last N years", "past N years"
     (re.compile(r"\b(?:last|past)\s+(\d+)\s+years?\b", re.IGNORECASE), "last_n"),
+    # "recent" alone → last 5 years
+    (re.compile(r"\brecent\b", re.IGNORECASE), "recent"),
     # Single year: "in 2020", "from 2020"
     (re.compile(r"\bin\s+(\d{4})\b", re.IGNORECASE), "exact"),
     # Decade: "in the 1990s", "from the 2000s"
@@ -761,6 +760,9 @@ def extract_intent(text: str) -> IntentSpec:
     # Extract journals (bibstems)
     intent.bibstems, working_text = _extract_journals(working_text)
 
+    # Extract planetary features (before topic extraction so names are consumed)
+    intent.planetary_features, working_text = _extract_planetary_features(working_text)
+
     # Remaining text becomes free text terms (topics)
     intent.free_text_terms, intent.or_terms = _extract_topics(working_text)
 
@@ -841,6 +843,9 @@ def _extract_years(text: str) -> tuple[int | None, int | None, str]:
                 decade_start = int(match.group(1))
                 year_from = decade_start
                 year_to = decade_start + 9
+            elif pattern_type == "recent":
+                year_from = current_year - 5
+                year_to = current_year
 
             # Remove matched phrase from text
             cleaned_text = pattern.sub(" ", cleaned_text)
@@ -941,6 +946,10 @@ def _extract_doctypes(text: str) -> tuple[set[str], str]:
     return doctypes, cleaned_text
 
 
+# "Hubble" in these cosmology terms is NOT the telescope — do not map to HST
+_BIBGROUP_HUBBLE_BLOCKLIST = frozenset({"hubble tension", "hubble constant", "hubble parameter"})
+
+
 def _extract_bibgroups(text: str) -> tuple[set[str], str]:
     """Extract bibgroup values from text using synonym map.
 
@@ -954,6 +963,10 @@ def _extract_bibgroups(text: str) -> tuple[set[str], str]:
     cleaned_text = text.lower()
 
     for synonym in sorted(BIBGROUP_SYNONYMS.keys(), key=len, reverse=True):
+        # "hubble" alone → HST; "hubble tension"/"hubble constant" → cosmology term, keep as topic
+        if synonym == "hubble":
+            if any(phrase in cleaned_text for phrase in _BIBGROUP_HUBBLE_BLOCKLIST):
+                continue
         # Use word boundary matching to avoid partial matches
         pattern = re.compile(r"\b" + re.escape(synonym) + r"\b")
         if pattern.search(cleaned_text):
@@ -1088,6 +1101,40 @@ def _extract_journals(text: str) -> tuple[list[str], str]:
 
     cleaned_text = re.sub(r"\s+", " ", cleaned_text).strip()
     return unique, cleaned_text
+
+
+def _extract_planetary_features(text: str) -> tuple[list[str], str]:
+    """Extract planetary feature names from text using Gazetteer lookup.
+
+    Only matches multi-word feature names (e.g. "Olympus Mons", "Valles Marineris")
+    to avoid false positives from single-word names like "Gale" or "Abel".
+
+    Args:
+        text: Input text to scan
+
+    Returns:
+        Tuple of (list of canonical feature names, text with feature names removed)
+    """
+    from .planetary_feature_lookup import find_planetary_features_in_text
+
+    matches = find_planetary_features_in_text(text)
+    if not matches:
+        return [], text
+
+    features = []
+    cleaned = text
+    for matched_text, canonical in matches:
+        features.append(canonical)
+        # Remove the matched text from working text (case-insensitive)
+        cleaned = re.sub(
+            r"\b" + re.escape(matched_text) + r"\b",
+            " ",
+            cleaned,
+            flags=re.IGNORECASE,
+        )
+
+    cleaned = re.sub(r"\s+", " ", cleaned).strip()
+    return features, cleaned
 
 
 def _extract_topics(text: str) -> tuple[list[str], list[str]]:

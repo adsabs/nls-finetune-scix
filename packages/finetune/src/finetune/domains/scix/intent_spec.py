@@ -63,6 +63,7 @@ class IntentSpec:
     affiliations: list[str] = field(default_factory=list)
     bibstems: list[str] = field(default_factory=list)
     objects: list[str] = field(default_factory=list)
+    planetary_features: list[str] = field(default_factory=list)
 
     # Year range
     year_from: int | None = None
@@ -79,6 +80,36 @@ class IntentSpec:
     # Operator fields
     operator: str | None = None
     operator_target: str | None = None
+
+    # Negation (LLM-only patterns)
+    negated_terms: list[str] = field(default_factory=list)
+    negated_properties: set[str] = field(default_factory=set)
+    negated_doctypes: set[str] = field(default_factory=set)
+
+    # Field presence (has:body, has:data, etc.)
+    has_fields: set[str] = field(default_factory=set)
+
+    # Metric ranges
+    citation_count_min: int | None = None
+    citation_count_max: int | None = None
+    read_count_min: int | None = None
+
+    # Acknowledgment/grant
+    ack_terms: list[str] = field(default_factory=list)
+    grant_terms: list[str] = field(default_factory=list)
+
+    # Title-specific terms (title:"X" as distinct from abs:"X")
+    title_terms: list[str] = field(default_factory=list)
+
+    # Full-text search (full:"X")
+    full_text_terms: list[str] = field(default_factory=list)
+
+    # Advanced
+    exact_match_fields: dict[str, str] = field(default_factory=dict)  # {field: value} for =field:"value"
+
+    # Raw clauses that can't be decomposed into structured fields
+    # (e.g., complex boolean, pos(), nested operators, identifiers)
+    passthrough_clauses: list[str] = field(default_factory=list)
 
     # Metadata
     raw_user_text: str = ""
@@ -111,10 +142,24 @@ class IntentSpec:
             or self.affiliations
             or self.bibstems
             or self.objects
+            or self.planetary_features
             or self.year_from
             or self.year_to
             or self.has_constraints()
+            or self.negated_terms
+            or self.has_fields
+            or self.citation_count_min is not None
+            or self.ack_terms
+            or self.grant_terms
+            or self.title_terms
+            or self.full_text_terms
+            or self.passthrough_clauses
         )
+
+    _SET_FIELDS = (
+        "doctype", "property", "collection", "bibgroup", "esources", "data",
+        "negated_properties", "negated_doctypes", "has_fields",
+    )
 
     def to_dict(self) -> dict:
         """Convert to dictionary for JSON serialization.
@@ -123,7 +168,7 @@ class IntentSpec:
         """
         d = asdict(self)
         # Convert sets to sorted lists for JSON serialization
-        for key in ("doctype", "property", "collection", "bibgroup", "esources", "data"):
+        for key in self._SET_FIELDS:
             d[key] = sorted(d[key])
         return d
 
@@ -136,17 +181,51 @@ class IntentSpec:
         """Create IntentSpec from dictionary.
 
         Handles conversion of lists back to sets for enum fields.
+        Filters out unknown keys to prevent crashes from extra fields.
         """
+        from dataclasses import fields as dc_fields
+
+        valid_keys = {f.name for f in dc_fields(cls)}
+        filtered = {k: v for k, v in d.items() if k in valid_keys}
         # Convert lists to sets for enum fields
-        for key in ("doctype", "property", "collection", "bibgroup", "esources", "data"):
-            if key in d and isinstance(d[key], list):
-                d[key] = set(d[key])
-        return cls(**d)
+        for key in cls._SET_FIELDS:
+            if key in filtered and isinstance(filtered[key], list):
+                filtered[key] = set(filtered[key])
+        return cls(**filtered)
 
     @classmethod
     def from_json(cls, json_str: str) -> "IntentSpec":
         """Deserialize from JSON string."""
         return cls.from_dict(json_loads(json_str))
+
+    def to_compact_dict(self) -> dict:
+        """Non-empty fields only, no metadata. For LLM training output."""
+        d = self.to_dict()
+        # Strip metadata fields that shouldn't appear in training output
+        d.pop("raw_user_text", None)
+        d.pop("confidence", None)
+        return {
+            k: v
+            for k, v in d.items()
+            if v is not None and v != [] and v != {} and v != "" and v != 0
+        }
+
+    @classmethod
+    def from_compact_dict(cls, d: dict) -> "IntentSpec":
+        """Create IntentSpec from compact dict, filtering unknown keys.
+
+        Unlike from_dict(), this safely ignores keys that don't correspond
+        to IntentSpec fields (e.g., extra metadata from LLM output).
+        """
+        from dataclasses import fields as dc_fields
+
+        valid_keys = {f.name for f in dc_fields(cls)}
+        filtered = {k: v for k, v in d.items() if k in valid_keys}
+        # Convert lists to sets for enum fields
+        for key in cls._SET_FIELDS:
+            if key in filtered and isinstance(filtered[key], list):
+                filtered[key] = set(filtered[key])
+        return cls(**filtered)
 
     def __repr__(self) -> str:
         """Compact representation for debugging."""
@@ -161,6 +240,14 @@ class IntentSpec:
             parts.append(f"years={self.year_from}-{self.year_to}")
         if self.operator:
             parts.append(f"op={self.operator}")
+        if self.negated_terms:
+            parts.append(f"NOT={self.negated_terms}")
+        if self.has_fields:
+            parts.append(f"has={sorted(self.has_fields)}")
+        if self.citation_count_min is not None:
+            parts.append(f"cite_min={self.citation_count_min}")
+        if self.passthrough_clauses:
+            parts.append(f"passthrough={self.passthrough_clauses}")
         if self.has_constraints():
             constraints = []
             if self.doctype:

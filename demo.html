@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SciX NL Search Demo</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0f172a; color: #e2e8f0; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 40px 20px; }
+h1 { font-size: 1.8rem; margin-bottom: 8px; color: #38bdf8; }
+.subtitle { color: #94a3b8; margin-bottom: 30px; font-size: 0.9rem; }
+.search-box { width: 100%; max-width: 700px; display: flex; gap: 8px; margin-bottom: 20px; }
+input { flex: 1; padding: 14px 18px; border-radius: 8px; border: 1px solid #334155; background: #1e293b; color: #f1f5f9; font-size: 1rem; outline: none; }
+input:focus { border-color: #38bdf8; }
+input::placeholder { color: #64748b; }
+button { padding: 14px 24px; border-radius: 8px; border: none; background: #0ea5e9; color: white; font-size: 1rem; font-weight: 600; cursor: pointer; white-space: nowrap; }
+button:hover { background: #0284c7; }
+button:disabled { background: #334155; cursor: wait; }
+.result { width: 100%; max-width: 700px; margin-bottom: 16px; }
+.query-box { background: #1e293b; border: 1px solid #334155; border-radius: 8px; padding: 16px; margin-bottom: 12px; }
+.query-label { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
+.query-text { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 1.05rem; color: #34d399; word-break: break-all; cursor: pointer; }
+.query-text:hover { color: #6ee7b7; }
+.meta { font-size: 0.8rem; color: #64748b; margin-top: 8px; }
+.ads-results { background: #1e293b; border: 1px solid #334155; border-radius: 8px; padding: 16px; }
+.ads-results h3 { font-size: 0.85rem; color: #94a3b8; margin-bottom: 12px; }
+.paper { padding: 10px 0; border-bottom: 1px solid #1e293b; }
+.paper:last-child { border-bottom: none; }
+.paper-title { color: #e2e8f0; font-size: 0.95rem; margin-bottom: 4px; }
+.paper-title a { color: #38bdf8; text-decoration: none; }
+.paper-title a:hover { text-decoration: underline; }
+.paper-authors { color: #94a3b8; font-size: 0.8rem; }
+.paper-meta { color: #64748b; font-size: 0.75rem; margin-top: 2px; }
+.error { color: #f87171; background: #1e293b; border: 1px solid #7f1d1d; border-radius: 8px; padding: 16px; width: 100%; max-width: 700px; }
+.spinner { display: inline-block; width: 16px; height: 16px; border: 2px solid #64748b; border-top-color: #38bdf8; border-radius: 50%; animation: spin 0.6s linear infinite; margin-right: 8px; vertical-align: middle; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.examples { width: 100%; max-width: 700px; margin-top: 20px; }
+.examples h3 { font-size: 0.8rem; color: #64748b; margin-bottom: 8px; }
+.example-btn { background: #1e293b; border: 1px solid #334155; border-radius: 6px; padding: 8px 14px; color: #94a3b8; font-size: 0.85rem; cursor: pointer; margin: 0 6px 6px 0; display: inline-block; }
+.example-btn:hover { border-color: #38bdf8; color: #e2e8f0; }
+.config { width: 100%; max-width: 700px; margin-bottom: 20px; display: flex; gap: 8px; align-items: center; }
+.config label { font-size: 0.75rem; color: #64748b; white-space: nowrap; }
+.config input { padding: 8px 12px; font-size: 0.85rem; }
+</style>
+</head>
+<body>
+
+<h1>SciX Natural Language Search</h1>
+<p class="subtitle">Type a natural language query — the model converts it to ADS search syntax</p>
+
+<div class="config">
+  <label>Model server:</label>
+  <input id="endpoint" value="http://localhost:8001" style="width:280px">
+  <label>ADS API key:</label>
+  <input id="apikey" type="password" placeholder="optional, for live results" style="width:200px">
+</div>
+
+<div class="search-box">
+  <input id="query" placeholder="e.g. papers about exoplanets by Seager from 2020" autofocus>
+  <button id="btn" onclick="search()">Search</button>
+</div>
+
+<div id="output"></div>
+
+<div class="examples">
+  <h3>Try these:</h3>
+  <span class="example-btn" onclick="tryExample(this)">papers about dark matter by Rubin</span>
+  <span class="example-btn" onclick="tryExample(this)">trending papers on exoplanets</span>
+  <span class="example-btn" onclick="tryExample(this)">highly cited gravitational wave papers from LIGO</span>
+  <span class="example-btn" onclick="tryExample(this)">Hubble deep field galaxy morphology</span>
+  <span class="example-btn" onclick="tryExample(this)">reviews of stellar evolution since 2015</span>
+  <span class="example-btn" onclick="tryExample(this)">papers by El-Badry on black hole binaries</span>
+  <span class="example-btn" onclick="tryExample(this)">MIT papers on fast radio bursts in Nature</span>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+
+function tryExample(el) {
+  $('query').value = el.textContent;
+  search();
+}
+
+$('query').addEventListener('keydown', e => { if (e.key === 'Enter') search(); });
+
+// Load ADS API key from .env if available
+try {
+  const saved = localStorage.getItem('ads_api_key');
+  if (saved) $('apikey').value = saved;
+} catch(e) {}
+$('apikey').addEventListener('change', () => {
+  try { localStorage.setItem('ads_api_key', $('apikey').value); } catch(e) {}
+});
+
+async function search() {
+  const nl = $('query').value.trim();
+  if (!nl) return;
+
+  const btn = $('btn');
+  const out = $('output');
+  btn.disabled = true;
+  btn.textContent = 'Searching...';
+  out.innerHTML = '<div><span class="spinner"></span> Generating query...</div>';
+
+  const endpoint = $('endpoint').value.replace(/\/$/, '');
+  const today = new Date().toISOString().split('T')[0];
+
+  try {
+    // Step 1: Call model server
+    const t0 = performance.now();
+    const res = await fetch(endpoint + '/v1/chat/completions', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'llm',
+        messages: [{ role: 'user', content: `Query: ${nl}\nDate: ${today}` }],
+        max_tokens: 256
+      })
+    });
+
+    if (!res.ok) throw new Error(`Model server returned ${res.status}`);
+    const data = await res.json();
+    const elapsed = Math.round(performance.now() - t0);
+    const adsQuery = data.choices[0].message.content;
+    const tokens = data.usage;
+
+    // Step 2: Show query
+    const scixUrl = `https://scixplorer.org/search?q=${encodeURIComponent(adsQuery)}&sort=date+desc`;
+    let html = `
+      <div class="result">
+        <div class="query-box">
+          <div class="query-label">Generated ADS Query</div>
+          <div class="query-text" onclick="navigator.clipboard.writeText('${adsQuery.replace(/'/g, "\\'")}').then(()=>this.style.color='#fbbf24')" title="Click to copy">${escHtml(adsQuery)}</div>
+          <div class="meta">${elapsed}ms | ${tokens.prompt_tokens}+${tokens.completion_tokens} tokens | <a href="${scixUrl}" target="_blank" style="color:#38bdf8">Open in SciXplorer</a></div>
+        </div>
+      </div>`;
+    out.innerHTML = html;
+
+    // Step 3: Fetch ADS results if API key provided
+    const apiKey = $('apikey').value.trim();
+    if (apiKey) {
+      out.innerHTML += '<div><span class="spinner"></span> Fetching results from ADS...</div>';
+      try {
+        const adsRes = await fetch(`https://api.adsabs.harvard.edu/v1/search/query?q=${encodeURIComponent(adsQuery)}&rows=10&fl=title,author,year,bibcode,citation_count,pubdate&sort=date+desc`, {
+          headers: { 'Authorization': `Bearer ${apiKey}` }
+        });
+        if (!adsRes.ok) throw new Error(`ADS API returned ${adsRes.status}`);
+        const adsData = await adsRes.json();
+        const docs = adsData.response.docs;
+        const numFound = adsData.response.numFound;
+
+        let papersHtml = `<div class="ads-results"><h3>ADS Results (${numFound.toLocaleString()} found, showing top 10)</h3>`;
+        if (docs.length === 0) {
+          papersHtml += '<p style="color:#f87171">No results found.</p>';
+        }
+        for (const doc of docs) {
+          const title = doc.title ? doc.title[0] : 'Untitled';
+          const authors = doc.author ? doc.author.slice(0, 3).join('; ') + (doc.author.length > 3 ? ' et al.' : '') : '';
+          const url = `https://ui.adsabs.harvard.edu/abs/${doc.bibcode}`;
+          papersHtml += `
+            <div class="paper">
+              <div class="paper-title"><a href="${url}" target="_blank">${escHtml(title)}</a></div>
+              <div class="paper-authors">${escHtml(authors)}</div>
+              <div class="paper-meta">${doc.year || ''} | ${doc.citation_count || 0} citations | ${doc.bibcode}</div>
+            </div>`;
+        }
+        papersHtml += '</div>';
+        // Remove spinner, append results
+        out.querySelector('.spinner')?.parentElement?.remove();
+        out.innerHTML += papersHtml;
+      } catch (adsErr) {
+        out.querySelector('.spinner')?.parentElement?.remove();
+        out.innerHTML += `<div class="error">ADS API error: ${escHtml(adsErr.message)}</div>`;
+      }
+    }
+
+  } catch (err) {
+    out.innerHTML = `<div class="error">Error: ${escHtml(err.message)}<br><br>Make sure the model server is running at ${escHtml(endpoint)}</div>`;
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Search';
+  }
+}
+
+function escHtml(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+</script>
+</body>
+</html>

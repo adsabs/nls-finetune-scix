@@ -33,25 +33,25 @@ echo "=========================================="
 echo "NLS Server - Local Development"
 echo "=========================================="
 echo "Device: $DEVICE"
-echo "Model: adsabs/scix-nls-translator"
-echo "Port: 8000"
+echo "Model: ${MODEL_NAME:-adsabs/NLQT-Qwen3-1.7B}"
+echo "Port: 8001 (use 8001 to avoid conflict with nectar on 8000)"
 echo ""
 echo "Endpoints:"
-echo "  Pipeline: http://localhost:8000/"
-echo "  vLLM:     http://localhost:8000/v1/chat/completions"
-echo "  Health:   http://localhost:8000/health"
+echo "  Pipeline: http://localhost:8001/"
+echo "  vLLM:     http://localhost:8001/v1/chat/completions"
+echo "  Health:   http://localhost:8001/health"
 echo ""
 echo "Configure nectar .env.local:"
-echo "  NL_SEARCH_PIPELINE_ENDPOINT=http://localhost:8000"
-echo "  NL_SEARCH_VLLM_ENDPOINT=http://localhost:8000/v1/chat/completions"
+echo "  NL_SEARCH_PIPELINE_ENDPOINT=http://localhost:8001"
+echo "  NL_SEARCH_VLLM_ENDPOINT=http://localhost:8001/v1/chat/completions"
 echo "  NEXT_PUBLIC_NL_SEARCH=enabled"
 echo "=========================================="
 echo ""
 
-# Set environment and run
-export MODEL_NAME="adsabs/scix-nls-translator"
+# Set environment and run (preserve MODEL_NAME if already set)
+export MODEL_NAME="${MODEL_NAME:-adsabs/NLQT-Qwen3-1.7B}"
 export DEVICE="$DEVICE"
-export PORT=8000
+export PORT=8001
 export PYTHONPATH="$PROJECT_DIR/packages/finetune/src:$PYTHONPATH"
 
 python docker/server.py

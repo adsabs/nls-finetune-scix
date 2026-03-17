@@ -1,7 +1,11 @@
 # NLS Server Dependencies
+# Both NLQT-Qwen3-1.7B and NLQT-Qwen3.5-2B were trained with Unsloth.
+# Qwen3.5 requires transformers>=5.2.0; Unsloth improves compatibility.
 torch>=2.0.0
-transformers>=4.40.0
+transformers>=5.2.0
 accelerate>=0.25.0
+peft>=0.18.0
+unsloth
 fastapi>=0.109.0
 uvicorn>=0.27.0
 pydantic>=2.0.0

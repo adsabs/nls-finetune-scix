@@ -1,0 +1,2502 @@
+[
+  {
+    "natural_language": "papers citing work on gravitational waves",
+    "ads_query": "citations(abs:\"gravitational waves\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "references used by papers on gravitational waves",
+    "ads_query": "references(abs:\"gravitational waves\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "trending papers about gravitational waves",
+    "ads_query": "trending(abs:\"gravitational waves\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "most useful papers on gravitational waves",
+    "ads_query": "useful(abs:\"gravitational waves\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "papers similar to studies of gravitational waves",
+    "ads_query": "similar(abs:\"gravitational waves\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "review papers on gravitational waves",
+    "ads_query": "reviews(abs:\"gravitational waves\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "papers citing work on exoplanet atmospheres",
+    "ads_query": "citations(abs:\"exoplanet atmospheres\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "references used by papers on exoplanet atmospheres",
+    "ads_query": "references(abs:\"exoplanet atmospheres\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "trending papers about exoplanet atmospheres",
+    "ads_query": "trending(abs:\"exoplanet atmospheres\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "most useful papers on exoplanet atmospheres",
+    "ads_query": "useful(abs:\"exoplanet atmospheres\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "papers similar to studies of exoplanet atmospheres",
+    "ads_query": "similar(abs:\"exoplanet atmospheres\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "review papers on exoplanet atmospheres",
+    "ads_query": "reviews(abs:\"exoplanet atmospheres\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "papers citing work on dark matter halos",
+    "ads_query": "citations(abs:\"dark matter halos\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "references used by papers on dark matter halos",
+    "ads_query": "references(abs:\"dark matter halos\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "trending papers about dark matter halos",
+    "ads_query": "trending(abs:\"dark matter halos\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "most useful papers on dark matter halos",
+    "ads_query": "useful(abs:\"dark matter halos\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "papers similar to studies of dark matter halos",
+    "ads_query": "similar(abs:\"dark matter halos\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "review papers on dark matter halos",
+    "ads_query": "reviews(abs:\"dark matter halos\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "papers citing work on stellar evolution",
+    "ads_query": "citations(abs:\"stellar evolution\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "references used by papers on stellar evolution",
+    "ads_query": "references(abs:\"stellar evolution\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "trending papers about stellar evolution",
+    "ads_query": "trending(abs:\"stellar evolution\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "most useful papers on stellar evolution",
+    "ads_query": "useful(abs:\"stellar evolution\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "papers similar to studies of stellar evolution",
+    "ads_query": "similar(abs:\"stellar evolution\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "review papers on stellar evolution",
+    "ads_query": "reviews(abs:\"stellar evolution\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "papers citing work on cosmic microwave background",
+    "ads_query": "citations(abs:\"cosmic microwave background\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "references used by papers on cosmic microwave background",
+    "ads_query": "references(abs:\"cosmic microwave background\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "trending papers about cosmic microwave background",
+    "ads_query": "trending(abs:\"cosmic microwave background\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "most useful papers on cosmic microwave background",
+    "ads_query": "useful(abs:\"cosmic microwave background\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "papers similar to studies of cosmic microwave background",
+    "ads_query": "similar(abs:\"cosmic microwave background\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "review papers on cosmic microwave background",
+    "ads_query": "reviews(abs:\"cosmic microwave background\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "papers citing work on solar flares",
+    "ads_query": "citations(abs:\"solar flares\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "references used by papers on solar flares",
+    "ads_query": "references(abs:\"solar flares\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "trending papers about solar flares",
+    "ads_query": "trending(abs:\"solar flares\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "most useful papers on solar flares",
+    "ads_query": "useful(abs:\"solar flares\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "papers similar to studies of solar flares",
+    "ads_query": "similar(abs:\"solar flares\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "review papers on solar flares",
+    "ads_query": "reviews(abs:\"solar flares\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "papers citing work on active galactic nuclei",
+    "ads_query": "citations(abs:\"active galactic nuclei\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "references used by papers on active galactic nuclei",
+    "ads_query": "references(abs:\"active galactic nuclei\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "trending papers about active galactic nuclei",
+    "ads_query": "trending(abs:\"active galactic nuclei\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "most useful papers on active galactic nuclei",
+    "ads_query": "useful(abs:\"active galactic nuclei\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "papers similar to studies of active galactic nuclei",
+    "ads_query": "similar(abs:\"active galactic nuclei\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "review papers on active galactic nuclei",
+    "ads_query": "reviews(abs:\"active galactic nuclei\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "papers citing work on brown dwarfs",
+    "ads_query": "citations(abs:\"brown dwarfs\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "references used by papers on brown dwarfs",
+    "ads_query": "references(abs:\"brown dwarfs\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "trending papers about brown dwarfs",
+    "ads_query": "trending(abs:\"brown dwarfs\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "most useful papers on brown dwarfs",
+    "ads_query": "useful(abs:\"brown dwarfs\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "papers similar to studies of brown dwarfs",
+    "ads_query": "similar(abs:\"brown dwarfs\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "review papers on brown dwarfs",
+    "ads_query": "reviews(abs:\"brown dwarfs\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "papers citing work on galaxy mergers",
+    "ads_query": "citations(abs:\"galaxy mergers\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "references used by papers on galaxy mergers",
+    "ads_query": "references(abs:\"galaxy mergers\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "trending papers about galaxy mergers",
+    "ads_query": "trending(abs:\"galaxy mergers\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "most useful papers on galaxy mergers",
+    "ads_query": "useful(abs:\"galaxy mergers\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "papers similar to studies of galaxy mergers",
+    "ads_query": "similar(abs:\"galaxy mergers\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "review papers on galaxy mergers",
+    "ads_query": "reviews(abs:\"galaxy mergers\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "papers citing work on supernova remnants",
+    "ads_query": "citations(abs:\"supernova remnants\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "references used by papers on supernova remnants",
+    "ads_query": "references(abs:\"supernova remnants\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "trending papers about supernova remnants",
+    "ads_query": "trending(abs:\"supernova remnants\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "most useful papers on supernova remnants",
+    "ads_query": "useful(abs:\"supernova remnants\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "papers similar to studies of supernova remnants",
+    "ads_query": "similar(abs:\"supernova remnants\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "review papers on supernova remnants",
+    "ads_query": "reviews(abs:\"supernova remnants\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "papers citing work on magnetars",
+    "ads_query": "citations(abs:\"magnetars\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "references used by papers on magnetars",
+    "ads_query": "references(abs:\"magnetars\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "trending papers about magnetars",
+    "ads_query": "trending(abs:\"magnetars\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "most useful papers on magnetars",
+    "ads_query": "useful(abs:\"magnetars\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "papers similar to studies of magnetars",
+    "ads_query": "similar(abs:\"magnetars\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "review papers on magnetars",
+    "ads_query": "reviews(abs:\"magnetars\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "papers citing work on planet formation",
+    "ads_query": "citations(abs:\"planet formation\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "references used by papers on planet formation",
+    "ads_query": "references(abs:\"planet formation\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "trending papers about planet formation",
+    "ads_query": "trending(abs:\"planet formation\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "most useful papers on planet formation",
+    "ads_query": "useful(abs:\"planet formation\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "papers similar to studies of planet formation",
+    "ads_query": "similar(abs:\"planet formation\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "review papers on planet formation",
+    "ads_query": "reviews(abs:\"planet formation\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "papers citing work on astrochemistry",
+    "ads_query": "citations(abs:\"astrochemistry\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "references used by papers on astrochemistry",
+    "ads_query": "references(abs:\"astrochemistry\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "trending papers about astrochemistry",
+    "ads_query": "trending(abs:\"astrochemistry\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "most useful papers on astrochemistry",
+    "ads_query": "useful(abs:\"astrochemistry\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "papers similar to studies of astrochemistry",
+    "ads_query": "similar(abs:\"astrochemistry\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "review papers on astrochemistry",
+    "ads_query": "reviews(abs:\"astrochemistry\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "papers citing work on quasar absorption lines",
+    "ads_query": "citations(abs:\"quasar absorption lines\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "references used by papers on quasar absorption lines",
+    "ads_query": "references(abs:\"quasar absorption lines\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "trending papers about quasar absorption lines",
+    "ads_query": "trending(abs:\"quasar absorption lines\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "most useful papers on quasar absorption lines",
+    "ads_query": "useful(abs:\"quasar absorption lines\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "papers similar to studies of quasar absorption lines",
+    "ads_query": "similar(abs:\"quasar absorption lines\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "review papers on quasar absorption lines",
+    "ads_query": "reviews(abs:\"quasar absorption lines\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "papers citing work on gamma ray bursts",
+    "ads_query": "citations(abs:\"gamma ray bursts\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "references used by papers on gamma ray bursts",
+    "ads_query": "references(abs:\"gamma ray bursts\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "trending papers about gamma ray bursts",
+    "ads_query": "trending(abs:\"gamma ray bursts\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "most useful papers on gamma ray bursts",
+    "ads_query": "useful(abs:\"gamma ray bursts\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "papers similar to studies of gamma ray bursts",
+    "ads_query": "similar(abs:\"gamma ray bursts\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "review papers on gamma ray bursts",
+    "ads_query": "reviews(abs:\"gamma ray bursts\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "papers citing work on neutron star mergers",
+    "ads_query": "citations(abs:\"neutron star mergers\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "references used by papers on neutron star mergers",
+    "ads_query": "references(abs:\"neutron star mergers\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "trending papers about neutron star mergers",
+    "ads_query": "trending(abs:\"neutron star mergers\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "most useful papers on neutron star mergers",
+    "ads_query": "useful(abs:\"neutron star mergers\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "papers similar to studies of neutron star mergers",
+    "ads_query": "similar(abs:\"neutron star mergers\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "review papers on neutron star mergers",
+    "ads_query": "reviews(abs:\"neutron star mergers\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "papers citing work on interstellar medium",
+    "ads_query": "citations(abs:\"interstellar medium\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "references used by papers on interstellar medium",
+    "ads_query": "references(abs:\"interstellar medium\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "trending papers about interstellar medium",
+    "ads_query": "trending(abs:\"interstellar medium\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "most useful papers on interstellar medium",
+    "ads_query": "useful(abs:\"interstellar medium\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "papers similar to studies of interstellar medium",
+    "ads_query": "similar(abs:\"interstellar medium\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "review papers on interstellar medium",
+    "ads_query": "reviews(abs:\"interstellar medium\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "papers citing work on asteroseismology",
+    "ads_query": "citations(abs:\"asteroseismology\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "references used by papers on asteroseismology",
+    "ads_query": "references(abs:\"asteroseismology\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "trending papers about asteroseismology",
+    "ads_query": "trending(abs:\"asteroseismology\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "most useful papers on asteroseismology",
+    "ads_query": "useful(abs:\"asteroseismology\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "papers similar to studies of asteroseismology",
+    "ads_query": "similar(abs:\"asteroseismology\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "review papers on asteroseismology",
+    "ads_query": "reviews(abs:\"asteroseismology\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "papers citing work on cosmic rays",
+    "ads_query": "citations(abs:\"cosmic rays\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "references used by papers on cosmic rays",
+    "ads_query": "references(abs:\"cosmic rays\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "trending papers about cosmic rays",
+    "ads_query": "trending(abs:\"cosmic rays\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "most useful papers on cosmic rays",
+    "ads_query": "useful(abs:\"cosmic rays\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "papers similar to studies of cosmic rays",
+    "ads_query": "similar(abs:\"cosmic rays\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "review papers on cosmic rays",
+    "ads_query": "reviews(abs:\"cosmic rays\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "papers citing work on fast radio bursts",
+    "ads_query": "citations(abs:\"fast radio bursts\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "references used by papers on fast radio bursts",
+    "ads_query": "references(abs:\"fast radio bursts\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "trending papers about fast radio bursts",
+    "ads_query": "trending(abs:\"fast radio bursts\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "most useful papers on fast radio bursts",
+    "ads_query": "useful(abs:\"fast radio bursts\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "papers similar to studies of fast radio bursts",
+    "ads_query": "similar(abs:\"fast radio bursts\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "review papers on fast radio bursts",
+    "ads_query": "reviews(abs:\"fast radio bursts\")",
+    "category": "operator"
+  },
+  {
+    "natural_language": "currently popular papers among useful studies of gravitational lensing",
+    "ads_query": "trending(useful(abs:\"gravitational lensing\"))",
+    "category": "operator"
+  },
+  {
+    "natural_language": "currently popular papers among useful studies of star formation",
+    "ads_query": "trending(useful(abs:\"star formation\"))",
+    "category": "operator"
+  },
+  {
+    "natural_language": "currently popular papers among useful studies of transiting exoplanets",
+    "ads_query": "trending(useful(abs:\"transiting exoplanets\"))",
+    "category": "operator"
+  },
+  {
+    "natural_language": "currently popular papers among useful studies of cosmological simulations",
+    "ads_query": "trending(useful(abs:\"cosmological simulations\"))",
+    "category": "operator"
+  },
+  {
+    "natural_language": "currently popular papers among useful studies of black hole accretion",
+    "ads_query": "trending(useful(abs:\"black hole accretion\"))",
+    "category": "operator"
+  },
+  {
+    "natural_language": "currently popular papers among useful studies of protoplanetary disks",
+    "ads_query": "trending(useful(abs:\"protoplanetary disks\"))",
+    "category": "operator"
+  },
+  {
+    "natural_language": "currently popular papers among useful studies of galaxy clusters",
+    "ads_query": "trending(useful(abs:\"galaxy clusters\"))",
+    "category": "operator"
+  },
+  {
+    "natural_language": "currently popular papers among useful studies of heliophysics",
+    "ads_query": "trending(useful(abs:\"heliophysics\"))",
+    "category": "operator"
+  },
+  {
+    "natural_language": "currently popular papers among useful studies of circumgalactic medium",
+    "ads_query": "trending(useful(abs:\"circumgalactic medium\"))",
+    "category": "operator"
+  },
+  {
+    "natural_language": "currently popular papers among useful studies of pulsar timing",
+    "ads_query": "trending(useful(abs:\"pulsar timing\"))",
+    "category": "operator"
+  },
+  {
+    "natural_language": "currently popular papers among useful studies of machine learning in astronomy",
+    "ads_query": "trending(useful(abs:\"machine learning in astronomy\"))",
+    "category": "operator"
+  },
+  {
+    "natural_language": "currently popular papers among useful studies of solar wind",
+    "ads_query": "trending(useful(abs:\"solar wind\"))",
+    "category": "operator"
+  },
+  {
+    "natural_language": "currently popular papers among useful studies of planetary craters",
+    "ads_query": "trending(useful(abs:\"planetary craters\"))",
+    "category": "operator"
+  },
+  {
+    "natural_language": "currently popular papers among useful studies of interferometry",
+    "ads_query": "trending(useful(abs:\"interferometry\"))",
+    "category": "operator"
+  },
+  {
+    "natural_language": "currently popular papers among useful studies of ultraviolet spectroscopy",
+    "ads_query": "trending(useful(abs:\"ultraviolet spectroscopy\"))",
+    "category": "operator"
+  },
+  {
+    "natural_language": "currently popular papers among useful studies of radio transients",
+    "ads_query": "trending(useful(abs:\"radio transients\"))",
+    "category": "operator"
+  },
+  {
+    "natural_language": "currently popular papers among useful studies of weak lensing",
+    "ads_query": "trending(useful(abs:\"weak lensing\"))",
+    "category": "operator"
+  },
+  {
+    "natural_language": "currently popular papers among useful studies of stellar metallicity",
+    "ads_query": "trending(useful(abs:\"stellar metallicity\"))",
+    "category": "operator"
+  },
+  {
+    "natural_language": "currently popular papers among useful studies of nebular emission",
+    "ads_query": "trending(useful(abs:\"nebular emission\"))",
+    "category": "operator"
+  },
+  {
+    "natural_language": "currently popular papers among useful studies of interplanetary dust",
+    "ads_query": "trending(useful(abs:\"interplanetary dust\"))",
+    "category": "operator"
+  },
+  {
+    "natural_language": "article papers about exoplanets",
+    "ads_query": "doctype:article abs:\"exoplanets\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "eprint papers about exoplanets",
+    "ads_query": "doctype:eprint abs:\"exoplanets\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "phdthesis papers about exoplanets",
+    "ads_query": "doctype:phdthesis abs:\"exoplanets\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "inproceedings papers about exoplanets",
+    "ads_query": "doctype:inproceedings abs:\"exoplanets\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "software papers about exoplanets",
+    "ads_query": "doctype:software abs:\"exoplanets\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "catalog papers about exoplanets",
+    "ads_query": "doctype:catalog abs:\"exoplanets\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "book papers about exoplanets",
+    "ads_query": "doctype:book abs:\"exoplanets\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "bookreview papers about exoplanets",
+    "ads_query": "doctype:bookreview abs:\"exoplanets\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "proceedings papers about exoplanets",
+    "ads_query": "doctype:proceedings abs:\"exoplanets\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "proposal papers about exoplanets",
+    "ads_query": "doctype:proposal abs:\"exoplanets\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "mastersthesis papers about exoplanets",
+    "ads_query": "doctype:mastersthesis abs:\"exoplanets\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "techreport papers about exoplanets",
+    "ads_query": "doctype:techreport abs:\"exoplanets\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "erratum papers about exoplanets",
+    "ads_query": "doctype:erratum abs:\"exoplanets\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "editorial papers about exoplanets",
+    "ads_query": "doctype:editorial abs:\"exoplanets\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "newsletter papers about exoplanets",
+    "ads_query": "doctype:newsletter abs:\"exoplanets\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "cosmology papers that are peer-reviewed",
+    "ads_query": "property:refereed abs:\"cosmology\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "cosmology papers that are open-access",
+    "ads_query": "property:openaccess abs:\"cosmology\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "cosmology papers that are preprint",
+    "ads_query": "property:eprint abs:\"cosmology\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "cosmology papers that are non-article",
+    "ads_query": "property:nonarticle abs:\"cosmology\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "cosmology papers that are data-linked",
+    "ads_query": "property:data abs:\"cosmology\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "cosmology papers that are software",
+    "ads_query": "property:software abs:\"cosmology\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "cosmology papers that are conference proceeding",
+    "ads_query": "property:inproceedings abs:\"cosmology\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "cosmology papers that are author-open-access",
+    "ads_query": "property:author_openaccess abs:\"cosmology\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "cosmology papers that are publisher-open-access",
+    "ads_query": "property:pub_openaccess abs:\"cosmology\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "cosmology papers that are eprint-open-access",
+    "ads_query": "property:eprint_openaccess abs:\"cosmology\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "cosmology papers that are ads-open-access",
+    "ads_query": "property:ads_openaccess abs:\"cosmology\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "cosmology papers that are article",
+    "ads_query": "property:article abs:\"cosmology\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "cosmology papers that are catalog",
+    "ads_query": "property:catalog abs:\"cosmology\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "cosmology papers that are associated",
+    "ads_query": "property:associated abs:\"cosmology\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "cosmology papers that are table-of-contents",
+    "ads_query": "property:toc abs:\"cosmology\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "cosmology papers that are ocr-abstract",
+    "ads_query": "property:ocr_abstract abs:\"cosmology\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "cosmology papers that are library-catalog",
+    "ads_query": "property:library_catalog abs:\"cosmology\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "cosmology papers that are inspire-indexed",
+    "ads_query": "property:inspire abs:\"cosmology\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "cosmology papers that are presentation",
+    "ads_query": "property:presentation abs:\"cosmology\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "cosmology papers that are electronic-source",
+    "ads_query": "property:esource abs:\"cosmology\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "astronomy database papers about spectroscopy",
+    "ads_query": "database:astronomy abs:\"spectroscopy\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "physics database papers about spectroscopy",
+    "ads_query": "database:physics abs:\"spectroscopy\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "general database papers about spectroscopy",
+    "ads_query": "database:general abs:\"spectroscopy\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "papers from the HST bibgroup on galaxies",
+    "ads_query": "bibgroup:HST abs:\"galaxies\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "papers from the JWST bibgroup on galaxies",
+    "ads_query": "bibgroup:JWST abs:\"galaxies\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "papers from the Chandra bibgroup on galaxies",
+    "ads_query": "bibgroup:Chandra abs:\"galaxies\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "papers from the SDSS bibgroup on galaxies",
+    "ads_query": "bibgroup:SDSS abs:\"galaxies\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "papers from the ALMA bibgroup on galaxies",
+    "ads_query": "bibgroup:ALMA abs:\"galaxies\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "papers from the Gaia bibgroup on galaxies",
+    "ads_query": "bibgroup:Gaia abs:\"galaxies\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "papers from the LIGO bibgroup on galaxies",
+    "ads_query": "bibgroup:LIGO abs:\"galaxies\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "papers from the Spitzer bibgroup on galaxies",
+    "ads_query": "bibgroup:Spitzer abs:\"galaxies\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "papers from the TESS bibgroup on galaxies",
+    "ads_query": "bibgroup:TESS abs:\"galaxies\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "papers from the Kepler bibgroup on galaxies",
+    "ads_query": "bibgroup:Kepler abs:\"galaxies\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "papers from the VLT bibgroup on galaxies",
+    "ads_query": "bibgroup:VLT abs:\"galaxies\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "papers from the MeerKAT bibgroup on galaxies",
+    "ads_query": "bibgroup:MeerKAT abs:\"galaxies\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "papers from the SOHO bibgroup on galaxies",
+    "ads_query": "bibgroup:SOHO abs:\"galaxies\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "papers from the Fermi bibgroup on galaxies",
+    "ads_query": "bibgroup:Fermi abs:\"galaxies\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "papers from the NOIRLab bibgroup on galaxies",
+    "ads_query": "bibgroup:NOIRLab abs:\"galaxies\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "papers linked to MAST data on exoplanets",
+    "ads_query": "data:MAST abs:\"exoplanets\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "papers linked to NED data on exoplanets",
+    "ads_query": "data:NED abs:\"exoplanets\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "papers linked to SIMBAD data on exoplanets",
+    "ads_query": "data:SIMBAD abs:\"exoplanets\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "papers linked to VizieR data on exoplanets",
+    "ads_query": "data:VizieR abs:\"exoplanets\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "papers linked to IRSA data on exoplanets",
+    "ads_query": "data:IRSA abs:\"exoplanets\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "papers linked to HEASARC data on exoplanets",
+    "ads_query": "data:HEASARC abs:\"exoplanets\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "papers linked to Chandra data on exoplanets",
+    "ads_query": "data:Chandra abs:\"exoplanets\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "papers linked to CXO data on exoplanets",
+    "ads_query": "data:CXO abs:\"exoplanets\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "papers linked to PDS data on exoplanets",
+    "ads_query": "data:PDS abs:\"exoplanets\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "papers linked to XMM data on exoplanets",
+    "ads_query": "data:XMM abs:\"exoplanets\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "papers linked to Spitzer data on exoplanets",
+    "ads_query": "data:Spitzer abs:\"exoplanets\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "papers linked to TNS data on exoplanets",
+    "ads_query": "data:TNS abs:\"exoplanets\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "papers linked to KOA data on exoplanets",
+    "ads_query": "data:KOA abs:\"exoplanets\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "papers linked to Herschel data on exoplanets",
+    "ads_query": "data:Herschel abs:\"exoplanets\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "papers linked to NExScI data on exoplanets",
+    "ads_query": "data:NExScI abs:\"exoplanets\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "papers linked to ESA data on exoplanets",
+    "ads_query": "data:ESA abs:\"exoplanets\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "papers linked to ESO data on exoplanets",
+    "ads_query": "data:ESO abs:\"exoplanets\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "papers linked to NOAO data on exoplanets",
+    "ads_query": "data:NOAO abs:\"exoplanets\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "papers linked to ISO data on exoplanets",
+    "ads_query": "data:ISO abs:\"exoplanets\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "papers linked to GTC data on exoplanets",
+    "ads_query": "data:GTC abs:\"exoplanets\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "dark energy papers with publisher PDF access",
+    "ads_query": "esources:PUB_PDF abs:\"dark energy\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "dark energy papers with publisher HTML access",
+    "ads_query": "esources:PUB_HTML abs:\"dark energy\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "dark energy papers with eprint PDF access",
+    "ads_query": "esources:EPRINT_PDF abs:\"dark energy\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "dark energy papers with eprint HTML access",
+    "ads_query": "esources:EPRINT_HTML abs:\"dark energy\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "dark energy papers with author PDF access",
+    "ads_query": "esources:AUTHOR_PDF abs:\"dark energy\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "dark energy papers with author HTML access",
+    "ads_query": "esources:AUTHOR_HTML abs:\"dark energy\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "dark energy papers with ADS PDF access",
+    "ads_query": "esources:ADS_PDF abs:\"dark energy\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "dark energy papers with ADS scanned copy access",
+    "ads_query": "esources:ADS_SCAN abs:\"dark energy\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "supernova papers with full text available",
+    "ads_query": "has:body abs:\"supernovae\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "supernova papers with acknowledgements available",
+    "ads_query": "has:ack abs:\"supernovae\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "supernova papers with linked data metadata",
+    "ads_query": "has:data abs:\"supernovae\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "supernova papers with ORCID publication metadata",
+    "ads_query": "has:orcid_pub abs:\"supernovae\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "supernova papers with grant metadata",
+    "ads_query": "has:grant abs:\"supernovae\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "supernova papers with full-text index coverage",
+    "ads_query": "has:full abs:\"supernovae\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "supernova papers with keywords available",
+    "ads_query": "has:keyword abs:\"supernovae\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "refereed open access papers with data links on galaxy surveys",
+    "ads_query": "property:(refereed openaccess data) abs:\"galaxy surveys\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "open access refereed papers on stellar evolution",
+    "ads_query": "property:openaccess property:refereed abs:\"stellar evolution\"",
+    "category": "filters"
+  },
+  {
+    "natural_language": "papers by Hawking about black holes",
+    "ads_query": "author:\"Hawking, S\" abs:\"black holes\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "first author papers by Hawking on black holes",
+    "ads_query": "author:\"^Hawking\" abs:\"black holes\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "papers by Einstein about relativity",
+    "ads_query": "author:\"Einstein, A\" abs:\"relativity\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "first author papers by Einstein on relativity",
+    "ads_query": "author:\"^Einstein\" abs:\"relativity\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "papers by Rubin about galaxy rotation",
+    "ads_query": "author:\"Rubin, V\" abs:\"galaxy rotation\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "first author papers by Rubin on galaxy rotation",
+    "ads_query": "author:\"^Rubin\" abs:\"galaxy rotation\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "papers by Sagan about planetary science",
+    "ads_query": "author:\"Sagan, C\" abs:\"planetary science\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "first author papers by Sagan on planetary science",
+    "ads_query": "author:\"^Sagan\" abs:\"planetary science\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "papers by Hubble about galaxy classification",
+    "ads_query": "author:\"Hubble, E\" abs:\"galaxy classification\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "first author papers by Hubble on galaxy classification",
+    "ads_query": "author:\"^Hubble\" abs:\"galaxy classification\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "papers by Payne about stellar spectra",
+    "ads_query": "author:\"Payne, C\" abs:\"stellar spectra\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "first author papers by Payne on stellar spectra",
+    "ads_query": "author:\"^Payne\" abs:\"stellar spectra\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "papers by Chandrasekhar about white dwarfs",
+    "ads_query": "author:\"Chandrasekhar, S\" abs:\"white dwarfs\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "first author papers by Chandrasekhar on white dwarfs",
+    "ads_query": "author:\"^Chandrasekhar\" abs:\"white dwarfs\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "papers by Leavitt about cepheid variables",
+    "ads_query": "author:\"Leavitt, H\" abs:\"cepheid variables\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "first author papers by Leavitt on cepheid variables",
+    "ads_query": "author:\"^Leavitt\" abs:\"cepheid variables\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "papers by Eddington about stellar structure",
+    "ads_query": "author:\"Eddington, A\" abs:\"stellar structure\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "first author papers by Eddington on stellar structure",
+    "ads_query": "author:\"^Eddington\" abs:\"stellar structure\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "papers by Shklovsky about radio astronomy",
+    "ads_query": "author:\"Shklovsky, I\" abs:\"radio astronomy\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "first author papers by Shklovsky on radio astronomy",
+    "ads_query": "author:\"^Shklovsky\" abs:\"radio astronomy\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "papers by Zwicky about supernovae",
+    "ads_query": "author:\"Zwicky, F\" abs:\"supernovae\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "first author papers by Zwicky on supernovae",
+    "ads_query": "author:\"^Zwicky\" abs:\"supernovae\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "papers by Spitzer about interstellar medium",
+    "ads_query": "author:\"Spitzer, L\" abs:\"interstellar medium\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "first author papers by Spitzer on interstellar medium",
+    "ads_query": "author:\"^Spitzer\" abs:\"interstellar medium\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "papers by Kuiper about outer planets",
+    "ads_query": "author:\"Kuiper, G\" abs:\"outer planets\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "first author papers by Kuiper on outer planets",
+    "ads_query": "author:\"^Kuiper\" abs:\"outer planets\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "papers by Salpeter about initial mass function",
+    "ads_query": "author:\"Salpeter, E\" abs:\"initial mass function\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "first author papers by Salpeter on initial mass function",
+    "ads_query": "author:\"^Salpeter\" abs:\"initial mass function\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "papers by Burbidge about quasars",
+    "ads_query": "author:\"Burbidge, G\" abs:\"quasars\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "first author papers by Burbidge on quasars",
+    "ads_query": "author:\"^Burbidge\" abs:\"quasars\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "papers by Oort about galactic dynamics",
+    "ads_query": "author:\"Oort, J\" abs:\"galactic dynamics\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "first author papers by Oort on galactic dynamics",
+    "ads_query": "author:\"^Oort\" abs:\"galactic dynamics\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "papers by de Vaucouleurs about galaxy morphology",
+    "ads_query": "author:\"de Vaucouleurs, G\" abs:\"galaxy morphology\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "first author papers by de Vaucouleurs on galaxy morphology",
+    "ads_query": "author:\"^de Vaucouleurs\" abs:\"galaxy morphology\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "papers by Peebles about cosmology",
+    "ads_query": "author:\"Peebles, P\" abs:\"cosmology\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "first author papers by Peebles on cosmology",
+    "ads_query": "author:\"^Peebles\" abs:\"cosmology\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "papers by Kerr about black hole metrics",
+    "ads_query": "author:\"Kerr, R\" abs:\"black hole metrics\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "first author papers by Kerr on black hole metrics",
+    "ads_query": "author:\"^Kerr\" abs:\"black hole metrics\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "papers by Minkowski about space time",
+    "ads_query": "author:\"Minkowski, H\" abs:\"space time\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "first author papers by Minkowski on space time",
+    "ads_query": "author:\"^Minkowski\" abs:\"space time\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "papers by Hawking or Einstein on cosmology",
+    "ads_query": "(author:\"Hawking, S\" OR author:\"Einstein, A\") abs:\"cosmology\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "papers by Rubin or Sagan on cosmology",
+    "ads_query": "(author:\"Rubin, V\" OR author:\"Sagan, C\") abs:\"cosmology\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "papers by Hubble or Payne on cosmology",
+    "ads_query": "(author:\"Hubble, E\" OR author:\"Payne, C\") abs:\"cosmology\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "papers by Chandrasekhar or Leavitt on cosmology",
+    "ads_query": "(author:\"Chandrasekhar, S\" OR author:\"Leavitt, H\") abs:\"cosmology\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "papers by Eddington or Shklovsky on cosmology",
+    "ads_query": "(author:\"Eddington, A\" OR author:\"Shklovsky, I\") abs:\"cosmology\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "papers by Zwicky or Spitzer on cosmology",
+    "ads_query": "(author:\"Zwicky, F\" OR author:\"Spitzer, L\") abs:\"cosmology\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "papers by Kuiper or Salpeter on cosmology",
+    "ads_query": "(author:\"Kuiper, G\" OR author:\"Salpeter, E\") abs:\"cosmology\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "papers by Burbidge or Oort on cosmology",
+    "ads_query": "(author:\"Burbidge, G\" OR author:\"Oort, J\") abs:\"cosmology\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "papers by de Vaucouleurs or Peebles on cosmology",
+    "ads_query": "(author:\"de Vaucouleurs, G\" OR author:\"Peebles, P\") abs:\"cosmology\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "papers by Kerr or Minkowski on cosmology",
+    "ads_query": "(author:\"Kerr, R\" OR author:\"Minkowski, H\") abs:\"cosmology\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "last author papers by Hawking about black holes",
+    "ads_query": "pos(author:\"Hawking, S\",-1) abs:\"black holes\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "last author papers by Einstein about relativity",
+    "ads_query": "pos(author:\"Einstein, A\",-1) abs:\"relativity\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "last author papers by Rubin about galaxy rotation",
+    "ads_query": "pos(author:\"Rubin, V\",-1) abs:\"galaxy rotation\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "last author papers by Sagan about planetary science",
+    "ads_query": "pos(author:\"Sagan, C\",-1) abs:\"planetary science\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "last author papers by Hubble about galaxy classification",
+    "ads_query": "pos(author:\"Hubble, E\",-1) abs:\"galaxy classification\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "last author papers by Payne about stellar spectra",
+    "ads_query": "pos(author:\"Payne, C\",-1) abs:\"stellar spectra\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "last author papers by Chandrasekhar about white dwarfs",
+    "ads_query": "pos(author:\"Chandrasekhar, S\",-1) abs:\"white dwarfs\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "last author papers by Leavitt about cepheid variables",
+    "ads_query": "pos(author:\"Leavitt, H\",-1) abs:\"cepheid variables\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "last author papers by Eddington about stellar structure",
+    "ads_query": "pos(author:\"Eddington, A\",-1) abs:\"stellar structure\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "last author papers by Shklovsky about radio astronomy",
+    "ads_query": "pos(author:\"Shklovsky, I\",-1) abs:\"radio astronomy\"",
+    "category": "author"
+  },
+  {
+    "natural_language": "papers from researchers at MIT about exoplanets",
+    "ads_query": "(inst:\"MIT\" OR aff:\"MIT\") abs:\"exoplanets\"",
+    "category": "affiliation"
+  },
+  {
+    "natural_language": "papers from researchers at Caltech about exoplanets",
+    "ads_query": "(inst:\"Caltech\" OR aff:\"Caltech\") abs:\"exoplanets\"",
+    "category": "affiliation"
+  },
+  {
+    "natural_language": "papers from researchers at Harvard about exoplanets",
+    "ads_query": "(inst:\"Harvard\" OR aff:\"Harvard\") abs:\"exoplanets\"",
+    "category": "affiliation"
+  },
+  {
+    "natural_language": "papers from researchers at Princeton about exoplanets",
+    "ads_query": "(inst:\"Princeton\" OR aff:\"Princeton\") abs:\"exoplanets\"",
+    "category": "affiliation"
+  },
+  {
+    "natural_language": "papers from researchers at Stanford about exoplanets",
+    "ads_query": "(inst:\"Stanford\" OR aff:\"Stanford\") abs:\"exoplanets\"",
+    "category": "affiliation"
+  },
+  {
+    "natural_language": "papers from researchers at JPL about exoplanets",
+    "ads_query": "(inst:\"JPL\" OR aff:\"JPL\") abs:\"exoplanets\"",
+    "category": "affiliation"
+  },
+  {
+    "natural_language": "papers from researchers at GSFC about exoplanets",
+    "ads_query": "(inst:\"GSFC\" OR aff:\"GSFC\") abs:\"exoplanets\"",
+    "category": "affiliation"
+  },
+  {
+    "natural_language": "papers from researchers at NASA Ames about exoplanets",
+    "ads_query": "(inst:\"NASA Ames\" OR aff:\"NASA Ames\") abs:\"exoplanets\"",
+    "category": "affiliation"
+  },
+  {
+    "natural_language": "papers from researchers at MPE about exoplanets",
+    "ads_query": "(inst:\"MPE\" OR aff:\"MPE\") abs:\"exoplanets\"",
+    "category": "affiliation"
+  },
+  {
+    "natural_language": "papers from researchers at MPIA about exoplanets",
+    "ads_query": "(inst:\"MPIA\" OR aff:\"MPIA\") abs:\"exoplanets\"",
+    "category": "affiliation"
+  },
+  {
+    "natural_language": "papers by researcher with ORCID 0000-0002-1825-0097",
+    "ads_query": "orcid:0000-0002-1825-0097",
+    "category": "author"
+  },
+  {
+    "natural_language": "papers by researcher with ORCID 0000-0001-5109-3700",
+    "ads_query": "orcid:0000-0001-5109-3700",
+    "category": "author"
+  },
+  {
+    "natural_language": "papers by researcher with ORCID 0000-0002-9079-593X",
+    "ads_query": "orcid:0000-0002-9079-593X",
+    "category": "author"
+  },
+  {
+    "natural_language": "papers by researcher with ORCID 0000-0003-1234-5678",
+    "ads_query": "orcid:0000-0003-1234-5678",
+    "category": "author"
+  },
+  {
+    "natural_language": "papers by researcher with ORCID 0000-0002-3456-7890",
+    "ads_query": "orcid:0000-0002-3456-7890",
+    "category": "author"
+  },
+  {
+    "natural_language": "papers by researcher with ORCID 0000-0001-2345-6789",
+    "ads_query": "orcid:0000-0001-2345-6789",
+    "category": "author"
+  },
+  {
+    "natural_language": "papers by researcher with ORCID 0000-0002-1111-2222",
+    "ads_query": "orcid:0000-0002-1111-2222",
+    "category": "author"
+  },
+  {
+    "natural_language": "papers by researcher with ORCID 0000-0003-3333-4444",
+    "ads_query": "orcid:0000-0003-3333-4444",
+    "category": "author"
+  },
+  {
+    "natural_language": "papers by researcher with ORCID 0000-0002-5555-6666",
+    "ads_query": "orcid:0000-0002-5555-6666",
+    "category": "author"
+  },
+  {
+    "natural_language": "papers by researcher with ORCID 0000-0001-7777-8888",
+    "ads_query": "orcid:0000-0001-7777-8888",
+    "category": "author"
+  },
+  {
+    "natural_language": "gravitational waves papers from 1990 to 1995",
+    "ads_query": "abs:\"gravitational waves\" pubdate:[1990 TO 1995]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "gravitational waves papers since 2000",
+    "ads_query": "abs:\"gravitational waves\" pubdate:[2000 TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "gravitational waves papers from the last 5 years",
+    "ads_query": "abs:\"gravitational waves\" pubdate:[NOW-5YEARS TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "newly indexed papers on gravitational waves this month",
+    "ads_query": "similar(abs:\"gravitational waves\") entdate:[NOW-1MONTH TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "new papers on gravitational waves this week",
+    "ads_query": "abs:\"gravitational waves\" entdate:[NOW-7DAYS TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "exoplanets papers from 1991 to 1996",
+    "ads_query": "abs:\"exoplanets\" pubdate:[1991 TO 1996]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "exoplanets papers since 2001",
+    "ads_query": "abs:\"exoplanets\" pubdate:[2001 TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "exoplanets papers from the last 5 years",
+    "ads_query": "abs:\"exoplanets\" pubdate:[NOW-5YEARS TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "newly indexed papers on exoplanets this month",
+    "ads_query": "similar(abs:\"exoplanets\") entdate:[NOW-1MONTH TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "new papers on exoplanets this week",
+    "ads_query": "abs:\"exoplanets\" entdate:[NOW-7DAYS TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "dark energy papers from 1992 to 1997",
+    "ads_query": "abs:\"dark energy\" pubdate:[1992 TO 1997]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "dark energy papers since 2002",
+    "ads_query": "abs:\"dark energy\" pubdate:[2002 TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "dark energy papers from the last 5 years",
+    "ads_query": "abs:\"dark energy\" pubdate:[NOW-5YEARS TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "newly indexed papers on dark energy this month",
+    "ads_query": "similar(abs:\"dark energy\") entdate:[NOW-1MONTH TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "new papers on dark energy this week",
+    "ads_query": "abs:\"dark energy\" entdate:[NOW-7DAYS TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "solar physics papers from 1993 to 1998",
+    "ads_query": "abs:\"solar physics\" pubdate:[1993 TO 1998]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "solar physics papers since 2003",
+    "ads_query": "abs:\"solar physics\" pubdate:[2003 TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "solar physics papers from the last 5 years",
+    "ads_query": "abs:\"solar physics\" pubdate:[NOW-5YEARS TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "newly indexed papers on solar physics this month",
+    "ads_query": "similar(abs:\"solar physics\") entdate:[NOW-1MONTH TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "new papers on solar physics this week",
+    "ads_query": "abs:\"solar physics\" entdate:[NOW-7DAYS TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "galaxy evolution papers from 1994 to 1999",
+    "ads_query": "abs:\"galaxy evolution\" pubdate:[1994 TO 1999]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "galaxy evolution papers since 2004",
+    "ads_query": "abs:\"galaxy evolution\" pubdate:[2004 TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "galaxy evolution papers from the last 5 years",
+    "ads_query": "abs:\"galaxy evolution\" pubdate:[NOW-5YEARS TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "newly indexed papers on galaxy evolution this month",
+    "ads_query": "similar(abs:\"galaxy evolution\") entdate:[NOW-1MONTH TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "new papers on galaxy evolution this week",
+    "ads_query": "abs:\"galaxy evolution\" entdate:[NOW-7DAYS TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "planetary nebulae papers from 1995 to 2000",
+    "ads_query": "abs:\"planetary nebulae\" pubdate:[1995 TO 2000]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "planetary nebulae papers since 2005",
+    "ads_query": "abs:\"planetary nebulae\" pubdate:[2005 TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "planetary nebulae papers from the last 5 years",
+    "ads_query": "abs:\"planetary nebulae\" pubdate:[NOW-5YEARS TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "newly indexed papers on planetary nebulae this month",
+    "ads_query": "similar(abs:\"planetary nebulae\") entdate:[NOW-1MONTH TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "new papers on planetary nebulae this week",
+    "ads_query": "abs:\"planetary nebulae\" entdate:[NOW-7DAYS TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "cosmic rays papers from 1996 to 2001",
+    "ads_query": "abs:\"cosmic rays\" pubdate:[1996 TO 2001]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "cosmic rays papers since 2006",
+    "ads_query": "abs:\"cosmic rays\" pubdate:[2006 TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "cosmic rays papers from the last 5 years",
+    "ads_query": "abs:\"cosmic rays\" pubdate:[NOW-5YEARS TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "newly indexed papers on cosmic rays this month",
+    "ads_query": "similar(abs:\"cosmic rays\") entdate:[NOW-1MONTH TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "new papers on cosmic rays this week",
+    "ads_query": "abs:\"cosmic rays\" entdate:[NOW-7DAYS TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "magnetohydrodynamics papers from 1997 to 2002",
+    "ads_query": "abs:\"magnetohydrodynamics\" pubdate:[1997 TO 2002]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "magnetohydrodynamics papers since 2007",
+    "ads_query": "abs:\"magnetohydrodynamics\" pubdate:[2007 TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "magnetohydrodynamics papers from the last 5 years",
+    "ads_query": "abs:\"magnetohydrodynamics\" pubdate:[NOW-5YEARS TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "newly indexed papers on magnetohydrodynamics this month",
+    "ads_query": "similar(abs:\"magnetohydrodynamics\") entdate:[NOW-1MONTH TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "new papers on magnetohydrodynamics this week",
+    "ads_query": "abs:\"magnetohydrodynamics\" entdate:[NOW-7DAYS TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "stellar populations papers from 1998 to 2003",
+    "ads_query": "abs:\"stellar populations\" pubdate:[1998 TO 2003]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "stellar populations papers since 2008",
+    "ads_query": "abs:\"stellar populations\" pubdate:[2008 TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "stellar populations papers from the last 5 years",
+    "ads_query": "abs:\"stellar populations\" pubdate:[NOW-5YEARS TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "newly indexed papers on stellar populations this month",
+    "ads_query": "similar(abs:\"stellar populations\") entdate:[NOW-1MONTH TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "new papers on stellar populations this week",
+    "ads_query": "abs:\"stellar populations\" entdate:[NOW-7DAYS TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "gamma ray bursts papers from 1999 to 2004",
+    "ads_query": "abs:\"gamma ray bursts\" pubdate:[1999 TO 2004]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "gamma ray bursts papers since 2009",
+    "ads_query": "abs:\"gamma ray bursts\" pubdate:[2009 TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "gamma ray bursts papers from the last 5 years",
+    "ads_query": "abs:\"gamma ray bursts\" pubdate:[NOW-5YEARS TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "newly indexed papers on gamma ray bursts this month",
+    "ads_query": "similar(abs:\"gamma ray bursts\") entdate:[NOW-1MONTH TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "new papers on gamma ray bursts this week",
+    "ads_query": "abs:\"gamma ray bursts\" entdate:[NOW-7DAYS TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "quasar variability papers from 2000 to 2005",
+    "ads_query": "abs:\"quasar variability\" pubdate:[2000 TO 2005]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "quasar variability papers since 2010",
+    "ads_query": "abs:\"quasar variability\" pubdate:[2010 TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "quasar variability papers from the last 5 years",
+    "ads_query": "abs:\"quasar variability\" pubdate:[NOW-5YEARS TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "newly indexed papers on quasar variability this month",
+    "ads_query": "similar(abs:\"quasar variability\") entdate:[NOW-1MONTH TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "new papers on quasar variability this week",
+    "ads_query": "abs:\"quasar variability\" entdate:[NOW-7DAYS TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "astrobiology papers from 2001 to 2006",
+    "ads_query": "abs:\"astrobiology\" pubdate:[2001 TO 2006]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "astrobiology papers since 2011",
+    "ads_query": "abs:\"astrobiology\" pubdate:[2011 TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "astrobiology papers from the last 5 years",
+    "ads_query": "abs:\"astrobiology\" pubdate:[NOW-5YEARS TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "newly indexed papers on astrobiology this month",
+    "ads_query": "similar(abs:\"astrobiology\") entdate:[NOW-1MONTH TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "new papers on astrobiology this week",
+    "ads_query": "abs:\"astrobiology\" entdate:[NOW-7DAYS TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "interferometry papers from 2002 to 2007",
+    "ads_query": "abs:\"interferometry\" pubdate:[2002 TO 2007]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "interferometry papers since 2012",
+    "ads_query": "abs:\"interferometry\" pubdate:[2012 TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "interferometry papers from the last 5 years",
+    "ads_query": "abs:\"interferometry\" pubdate:[NOW-5YEARS TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "newly indexed papers on interferometry this month",
+    "ads_query": "similar(abs:\"interferometry\") entdate:[NOW-1MONTH TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "new papers on interferometry this week",
+    "ads_query": "abs:\"interferometry\" entdate:[NOW-7DAYS TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "spectropolarimetry papers from 2003 to 2008",
+    "ads_query": "abs:\"spectropolarimetry\" pubdate:[2003 TO 2008]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "spectropolarimetry papers since 2013",
+    "ads_query": "abs:\"spectropolarimetry\" pubdate:[2013 TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "spectropolarimetry papers from the last 5 years",
+    "ads_query": "abs:\"spectropolarimetry\" pubdate:[NOW-5YEARS TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "newly indexed papers on spectropolarimetry this month",
+    "ads_query": "similar(abs:\"spectropolarimetry\") entdate:[NOW-1MONTH TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "new papers on spectropolarimetry this week",
+    "ads_query": "abs:\"spectropolarimetry\" entdate:[NOW-7DAYS TO *]",
+    "category": "temporal"
+  },
+  {
+    "natural_language": "papers about metal poor stars",
+    "ads_query": "abs:\"metal poor stars\"",
+    "category": "content"
+  },
+  {
+    "natural_language": "papers with metal poor stars in the title",
+    "ads_query": "title:\"metal poor stars\"",
+    "category": "content"
+  },
+  {
+    "natural_language": "papers about planet migration",
+    "ads_query": "abs:\"planet migration\"",
+    "category": "content"
+  },
+  {
+    "natural_language": "papers with planet migration in the title",
+    "ads_query": "title:\"planet migration\"",
+    "category": "content"
+  },
+  {
+    "natural_language": "papers about circumstellar disks",
+    "ads_query": "abs:\"circumstellar disks\"",
+    "category": "content"
+  },
+  {
+    "natural_language": "papers with circumstellar disks in the title",
+    "ads_query": "title:\"circumstellar disks\"",
+    "category": "content"
+  },
+  {
+    "natural_language": "papers about cosmic inflation",
+    "ads_query": "abs:\"cosmic inflation\"",
+    "category": "content"
+  },
+  {
+    "natural_language": "papers with cosmic inflation in the title",
+    "ads_query": "title:\"cosmic inflation\"",
+    "category": "content"
+  },
+  {
+    "natural_language": "papers about stellar magnetism",
+    "ads_query": "abs:\"stellar magnetism\"",
+    "category": "content"
+  },
+  {
+    "natural_language": "papers with stellar magnetism in the title",
+    "ads_query": "title:\"stellar magnetism\"",
+    "category": "content"
+  },
+  {
+    "natural_language": "papers about pulsar timing arrays",
+    "ads_query": "abs:\"pulsar timing arrays\"",
+    "category": "content"
+  },
+  {
+    "natural_language": "papers with pulsar timing arrays in the title",
+    "ads_query": "title:\"pulsar timing arrays\"",
+    "category": "content"
+  },
+  {
+    "natural_language": "papers about radiative transfer",
+    "ads_query": "abs:\"radiative transfer\"",
+    "category": "content"
+  },
+  {
+    "natural_language": "papers with radiative transfer in the title",
+    "ads_query": "title:\"radiative transfer\"",
+    "category": "content"
+  },
+  {
+    "natural_language": "papers about ultra diffuse galaxies",
+    "ads_query": "abs:\"ultra diffuse galaxies\"",
+    "category": "content"
+  },
+  {
+    "natural_language": "papers with ultra diffuse galaxies in the title",
+    "ads_query": "title:\"ultra diffuse galaxies\"",
+    "category": "content"
+  },
+  {
+    "natural_language": "papers about chemical abundances",
+    "ads_query": "abs:\"chemical abundances\"",
+    "category": "content"
+  },
+  {
+    "natural_language": "papers with chemical abundances in the title",
+    "ads_query": "title:\"chemical abundances\"",
+    "category": "content"
+  },
+  {
+    "natural_language": "papers about molecular clouds",
+    "ads_query": "abs:\"molecular clouds\"",
+    "category": "content"
+  },
+  {
+    "natural_language": "papers with molecular clouds in the title",
+    "ads_query": "title:\"molecular clouds\"",
+    "category": "content"
+  },
+  {
+    "natural_language": "papers about stellar flares",
+    "ads_query": "abs:\"stellar flares\"",
+    "category": "content"
+  },
+  {
+    "natural_language": "papers with stellar flares in the title",
+    "ads_query": "title:\"stellar flares\"",
+    "category": "content"
+  },
+  {
+    "natural_language": "papers about lunar geology",
+    "ads_query": "abs:\"lunar geology\"",
+    "category": "content"
+  },
+  {
+    "natural_language": "papers with lunar geology in the title",
+    "ads_query": "title:\"lunar geology\"",
+    "category": "content"
+  },
+  {
+    "natural_language": "papers about saturn rings",
+    "ads_query": "abs:\"saturn rings\"",
+    "category": "content"
+  },
+  {
+    "natural_language": "papers with saturn rings in the title",
+    "ads_query": "title:\"saturn rings\"",
+    "category": "content"
+  },
+  {
+    "natural_language": "papers about mars atmosphere",
+    "ads_query": "abs:\"mars atmosphere\"",
+    "category": "content"
+  },
+  {
+    "natural_language": "papers with mars atmosphere in the title",
+    "ads_query": "title:\"mars atmosphere\"",
+    "category": "content"
+  },
+  {
+    "natural_language": "papers about heliospheric current sheet",
+    "ads_query": "abs:\"heliospheric current sheet\"",
+    "category": "content"
+  },
+  {
+    "natural_language": "papers with heliospheric current sheet in the title",
+    "ads_query": "title:\"heliospheric current sheet\"",
+    "category": "content"
+  },
+  {
+    "natural_language": "papers about asteroid families",
+    "ads_query": "abs:\"asteroid families\"",
+    "category": "content"
+  },
+  {
+    "natural_language": "papers with asteroid families in the title",
+    "ads_query": "title:\"asteroid families\"",
+    "category": "content"
+  },
+  {
+    "natural_language": "papers about nebular lines",
+    "ads_query": "abs:\"nebular lines\"",
+    "category": "content"
+  },
+  {
+    "natural_language": "papers with nebular lines in the title",
+    "ads_query": "title:\"nebular lines\"",
+    "category": "content"
+  },
+  {
+    "natural_language": "papers about protostellar jets",
+    "ads_query": "abs:\"protostellar jets\"",
+    "category": "content"
+  },
+  {
+    "natural_language": "papers with protostellar jets in the title",
+    "ads_query": "title:\"protostellar jets\"",
+    "category": "content"
+  },
+  {
+    "natural_language": "papers about dwarf galaxies",
+    "ads_query": "abs:\"dwarf galaxies\"",
+    "category": "content"
+  },
+  {
+    "natural_language": "papers with dwarf galaxies in the title",
+    "ads_query": "title:\"dwarf galaxies\"",
+    "category": "content"
+  },
+  {
+    "natural_language": "papers about reionization",
+    "ads_query": "abs:\"reionization\"",
+    "category": "content"
+  },
+  {
+    "natural_language": "papers with reionization in the title",
+    "ads_query": "title:\"reionization\"",
+    "category": "content"
+  },
+  {
+    "natural_language": "papers about object M31",
+    "ads_query": "object:M31",
+    "category": "object"
+  },
+  {
+    "natural_language": "papers about object M51",
+    "ads_query": "object:M51",
+    "category": "object"
+  },
+  {
+    "natural_language": "papers about object M87",
+    "ads_query": "object:M87",
+    "category": "object"
+  },
+  {
+    "natural_language": "papers about object SMC",
+    "ads_query": "object:SMC",
+    "category": "object"
+  },
+  {
+    "natural_language": "papers about object LMC",
+    "ads_query": "object:LMC",
+    "category": "object"
+  },
+  {
+    "natural_language": "papers about object NGC 1068",
+    "ads_query": "object:NGC 1068",
+    "category": "object"
+  },
+  {
+    "natural_language": "papers about object Betelgeuse",
+    "ads_query": "object:Betelgeuse",
+    "category": "object"
+  },
+  {
+    "natural_language": "papers about object Sirius",
+    "ads_query": "object:Sirius",
+    "category": "object"
+  },
+  {
+    "natural_language": "papers about object Aldebaran",
+    "ads_query": "object:Aldebaran",
+    "category": "object"
+  },
+  {
+    "natural_language": "papers about object Haumea",
+    "ads_query": "object:Haumea",
+    "category": "object"
+  },
+  {
+    "natural_language": "papers about object Europa",
+    "ads_query": "object:Europa",
+    "category": "object"
+  },
+  {
+    "natural_language": "papers about object Enceladus",
+    "ads_query": "object:Enceladus",
+    "category": "object"
+  },
+  {
+    "natural_language": "papers about object Titan",
+    "ads_query": "object:Titan",
+    "category": "object"
+  },
+  {
+    "natural_language": "papers about object Vesta",
+    "ads_query": "object:Vesta",
+    "category": "object"
+  },
+  {
+    "natural_language": "papers about object Ceres",
+    "ads_query": "object:Ceres",
+    "category": "object"
+  },
+  {
+    "natural_language": "exact keyword match for accretion",
+    "ads_query": "=abs:\"accretion\"",
+    "category": "content"
+  },
+  {
+    "natural_language": "exact keyword match for supernova",
+    "ads_query": "=abs:\"supernova\"",
+    "category": "content"
+  },
+  {
+    "natural_language": "exact keyword match for asteroseismology",
+    "ads_query": "=abs:\"asteroseismology\"",
+    "category": "content"
+  },
+  {
+    "natural_language": "exact keyword match for photometry",
+    "ads_query": "=abs:\"photometry\"",
+    "category": "content"
+  },
+  {
+    "natural_language": "exact keyword match for spectroscopy",
+    "ads_query": "=abs:\"spectroscopy\"",
+    "category": "content"
+  },
+  {
+    "natural_language": "papers mentioning Astropy",
+    "ads_query": "abs:\"Astropy\" mention_count:[1 TO *]",
+    "category": "metrics"
+  },
+  {
+    "natural_language": "papers heavily mentioning Astropy",
+    "ads_query": "abs:\"Astropy\" mention_count:[5 TO *]",
+    "category": "metrics"
+  },
+  {
+    "natural_language": "papers mentioning NumPy",
+    "ads_query": "abs:\"NumPy\" mention_count:[1 TO *]",
+    "category": "metrics"
+  },
+  {
+    "natural_language": "papers heavily mentioning NumPy",
+    "ads_query": "abs:\"NumPy\" mention_count:[5 TO *]",
+    "category": "metrics"
+  },
+  {
+    "natural_language": "papers mentioning SciPy",
+    "ads_query": "abs:\"SciPy\" mention_count:[1 TO *]",
+    "category": "metrics"
+  },
+  {
+    "natural_language": "papers heavily mentioning SciPy",
+    "ads_query": "abs:\"SciPy\" mention_count:[5 TO *]",
+    "category": "metrics"
+  },
+  {
+    "natural_language": "papers mentioning TOPCAT",
+    "ads_query": "abs:\"TOPCAT\" mention_count:[1 TO *]",
+    "category": "metrics"
+  },
+  {
+    "natural_language": "papers heavily mentioning TOPCAT",
+    "ads_query": "abs:\"TOPCAT\" mention_count:[5 TO *]",
+    "category": "metrics"
+  },
+  {
+    "natural_language": "papers mentioning SExtractor",
+    "ads_query": "abs:\"SExtractor\" mention_count:[1 TO *]",
+    "category": "metrics"
+  },
+  {
+    "natural_language": "papers heavily mentioning SExtractor",
+    "ads_query": "abs:\"SExtractor\" mention_count:[5 TO *]",
+    "category": "metrics"
+  },
+  {
+    "natural_language": "papers mentioning CASA",
+    "ads_query": "abs:\"CASA\" mention_count:[1 TO *]",
+    "category": "metrics"
+  },
+  {
+    "natural_language": "papers heavily mentioning CASA",
+    "ads_query": "abs:\"CASA\" mention_count:[5 TO *]",
+    "category": "metrics"
+  },
+  {
+    "natural_language": "papers mentioning HEALPix",
+    "ads_query": "abs:\"HEALPix\" mention_count:[1 TO *]",
+    "category": "metrics"
+  },
+  {
+    "natural_language": "papers heavily mentioning HEALPix",
+    "ads_query": "abs:\"HEALPix\" mention_count:[5 TO *]",
+    "category": "metrics"
+  },
+  {
+    "natural_language": "papers mentioning PyCBC",
+    "ads_query": "abs:\"PyCBC\" mention_count:[1 TO *]",
+    "category": "metrics"
+  },
+  {
+    "natural_language": "papers heavily mentioning PyCBC",
+    "ads_query": "abs:\"PyCBC\" mention_count:[5 TO *]",
+    "category": "metrics"
+  },
+  {
+    "natural_language": "papers mentioning yt",
+    "ads_query": "abs:\"yt\" mention_count:[1 TO *]",
+    "category": "metrics"
+  },
+  {
+    "natural_language": "papers heavily mentioning yt",
+    "ads_query": "abs:\"yt\" mention_count:[5 TO *]",
+    "category": "metrics"
+  },
+  {
+    "natural_language": "papers mentioning Galfit",
+    "ads_query": "abs:\"Galfit\" mention_count:[1 TO *]",
+    "category": "metrics"
+  },
+  {
+    "natural_language": "papers heavily mentioning Galfit",
+    "ads_query": "abs:\"Galfit\" mention_count:[5 TO *]",
+    "category": "metrics"
+  },
+  {
+    "natural_language": "software records credited for Astropy",
+    "ads_query": "abs:\"Astropy\" credit_count:[1 TO *] doctype:software",
+    "category": "metrics"
+  },
+  {
+    "natural_language": "software records credited for NumPy",
+    "ads_query": "abs:\"NumPy\" credit_count:[1 TO *] doctype:software",
+    "category": "metrics"
+  },
+  {
+    "natural_language": "software records credited for SciPy",
+    "ads_query": "abs:\"SciPy\" credit_count:[1 TO *] doctype:software",
+    "category": "metrics"
+  },
+  {
+    "natural_language": "software records credited for TOPCAT",
+    "ads_query": "abs:\"TOPCAT\" credit_count:[1 TO *] doctype:software",
+    "category": "metrics"
+  },
+  {
+    "natural_language": "software records credited for SExtractor",
+    "ads_query": "abs:\"SExtractor\" credit_count:[1 TO *] doctype:software",
+    "category": "metrics"
+  },
+  {
+    "natural_language": "software records credited for CASA",
+    "ads_query": "abs:\"CASA\" credit_count:[1 TO *] doctype:software",
+    "category": "metrics"
+  },
+  {
+    "natural_language": "software records credited for HEALPix",
+    "ads_query": "abs:\"HEALPix\" credit_count:[1 TO *] doctype:software",
+    "category": "metrics"
+  },
+  {
+    "natural_language": "software records credited for PyCBC",
+    "ads_query": "abs:\"PyCBC\" credit_count:[1 TO *] doctype:software",
+    "category": "metrics"
+  },
+  {
+    "natural_language": "software records credited for yt",
+    "ads_query": "abs:\"yt\" credit_count:[1 TO *] doctype:software",
+    "category": "metrics"
+  },
+  {
+    "natural_language": "software records credited for Galfit",
+    "ads_query": "abs:\"Galfit\" credit_count:[1 TO *] doctype:software",
+    "category": "metrics"
+  },
+  {
+    "natural_language": "papers with high credit counts for simulation software",
+    "ads_query": "abs:\"simulation software\" credit_count:[10 TO *]",
+    "category": "metrics"
+  },
+  {
+    "natural_language": "papers with high credit counts for analysis pipeline",
+    "ads_query": "abs:\"analysis pipeline\" credit_count:[10 TO *]",
+    "category": "metrics"
+  },
+  {
+    "natural_language": "papers with high credit counts for catalog service",
+    "ads_query": "abs:\"catalog service\" credit_count:[10 TO *]",
+    "category": "metrics"
+  },
+  {
+    "natural_language": "papers with high credit counts for visualization toolkit",
+    "ads_query": "abs:\"visualization toolkit\" credit_count:[10 TO *]",
+    "category": "metrics"
+  },
+  {
+    "natural_language": "papers with high credit counts for data reduction package",
+    "ads_query": "abs:\"data reduction package\" credit_count:[10 TO *]",
+    "category": "metrics"
+  },
+  {
+    "natural_language": "papers tagged with the UAT concept dark matter",
+    "ads_query": "uat:\"Dark matter\"",
+    "category": "uat"
+  },
+  {
+    "natural_language": "papers tagged with the UAT concept exoplanets",
+    "ads_query": "uat:\"Exoplanets\"",
+    "category": "uat"
+  },
+  {
+    "natural_language": "papers tagged with the UAT concept solar flares",
+    "ads_query": "uat:\"Solar flares\"",
+    "category": "uat"
+  },
+  {
+    "natural_language": "papers tagged with the UAT concept galaxy clusters",
+    "ads_query": "uat:\"Galaxy clusters\"",
+    "category": "uat"
+  },
+  {
+    "natural_language": "papers tagged with the UAT concept spectroscopy",
+    "ads_query": "uat:\"Spectroscopy\"",
+    "category": "uat"
+  },
+  {
+    "natural_language": "papers tagged with the UAT concept interstellar dust",
+    "ads_query": "uat:\"Interstellar dust\"",
+    "category": "uat"
+  },
+  {
+    "natural_language": "papers tagged with the UAT concept gravitational waves",
+    "ads_query": "uat:\"Gravitational waves\"",
+    "category": "uat"
+  },
+  {
+    "natural_language": "papers tagged with the UAT concept supernova remnants",
+    "ads_query": "uat:\"Supernova remnants\"",
+    "category": "uat"
+  },
+  {
+    "natural_language": "papers tagged with the UAT concept cosmic rays",
+    "ads_query": "uat:\"Cosmic rays\"",
+    "category": "uat"
+  },
+  {
+    "natural_language": "papers tagged with the UAT concept planetary atmospheres",
+    "ads_query": "uat:\"Planetary atmospheres\"",
+    "category": "uat"
+  },
+  {
+    "natural_language": "papers tagged with the UAT concept star formation",
+    "ads_query": "uat:\"Star formation\"",
+    "category": "uat"
+  },
+  {
+    "natural_language": "papers tagged with the UAT concept astrobiology",
+    "ads_query": "uat:\"Astrobiology\"",
+    "category": "uat"
+  },
+  {
+    "natural_language": "papers tagged with the UAT concept high energy astrophysics",
+    "ads_query": "uat:\"High energy astrophysics\"",
+    "category": "uat"
+  },
+  {
+    "natural_language": "papers about mars craters",
+    "ads_query": "planetary_feature:\"Mars crater\"",
+    "category": "planetary_feature"
+  },
+  {
+    "natural_language": "papers about lunar maria",
+    "ads_query": "planetary_feature:\"Moon maria\"",
+    "category": "planetary_feature"
+  },
+  {
+    "natural_language": "papers about venus coronae",
+    "ads_query": "planetary_feature:\"Venus coronae\"",
+    "category": "planetary_feature"
+  },
+  {
+    "natural_language": "papers about mercury basins",
+    "ads_query": "planetary_feature:\"Mercury basin\"",
+    "category": "planetary_feature"
+  },
+  {
+    "natural_language": "papers about titan mountains",
+    "ads_query": "planetary_feature:\"Titan mons\"",
+    "category": "planetary_feature"
+  },
+  {
+    "natural_language": "papers about europa ridges",
+    "ads_query": "planetary_feature:\"Europa dorsum\"",
+    "category": "planetary_feature"
+  },
+  {
+    "natural_language": "papers about ganymede grooves",
+    "ads_query": "planetary_feature:\"Ganymede sulcus\"",
+    "category": "planetary_feature"
+  },
+  {
+    "natural_language": "papers about enceladus fissures",
+    "ads_query": "planetary_feature:\"Enceladus fissure\"",
+    "category": "planetary_feature"
+  },
+  {
+    "natural_language": "papers about vesta craters",
+    "ads_query": "planetary_feature:\"Vesta crater\"",
+    "category": "planetary_feature"
+  },
+  {
+    "natural_language": "papers about ceres domes",
+    "ads_query": "planetary_feature:\"Ceres tholus\"",
+    "category": "planetary_feature"
+  },
+  {
+    "natural_language": "papers about io volcanic centers",
+    "ads_query": "planetary_feature:\"Io patera\"",
+    "category": "planetary_feature"
+  },
+  {
+    "natural_language": "papers about pluto plains",
+    "ads_query": "planetary_feature:\"Pluto planitia\"",
+    "category": "planetary_feature"
+  }
+]

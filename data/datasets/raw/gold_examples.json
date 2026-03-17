@@ -1905,11 +1905,6 @@
     "category": "astronomy"
   },
   {
-    "natural_language": "papers excluding solar system studies",
-    "ads_query": "abs:\"exoplanet\" NOT abs:\"solar system\" doctype:article",
-    "category": "compound"
-  },
-  {
     "natural_language": "trending papers on exoplanets",
     "ads_query": "trending(abs:\"exoplanet\") doctype:article",
     "category": "operator"
@@ -2027,11 +2022,6 @@
   {
     "natural_language": "long term effects of space radiation on astronauts",
     "ads_query": "abs:(long term)",
-    "category": "topic"
-  },
-  {
-    "natural_language": "articles by Salama on polycyclic aromatic hydrocarbons",
-    "ads_query": "author:\"Salama\" abs:\", Farid\" doctype:article",
     "category": "topic"
   },
   {
@@ -2415,11 +2405,6 @@
     "category": "author"
   },
   {
-    "natural_language": "papers with associated data",
-    "ads_query": "abs:\"exoplanet\" property:data doctype:article",
-    "category": "property"
-  },
-  {
     "natural_language": "work by Faber from 1987",
     "ads_query": "author:\"^Faber\" year:1987 doctype:article",
     "category": "first_author"
@@ -2688,11 +2673,6 @@
     "natural_language": "Stanford spectroscopy research",
     "ads_query": "(inst:\"Stanford U\" OR aff:\"Stanford\") abs:\"spectroscopy\"",
     "category": "affiliation"
-  },
-  {
-    "natural_language": "moving boundary electrophoresis methods and applications",
-    "ads_query": "abs:(\"moving boundary electrophoresis\" AND (method* OR technique* OR application*))",
-    "category": "topic"
   },
   {
     "natural_language": "doi 10.1016/0169-7552(89)90019-6",
@@ -3600,11 +3580,6 @@
     "category": "topic"
   },
   {
-    "natural_language": "work by Sivanandam on stellar streams and globular clusters",
-    "ads_query": "author:\"Sivanandam, Suresh\" AND (abs:\"stream\" OR abs:\"star cluster\" OR abs:\"globular cluster\" OR abs:\"dwarf\") doctype:article",
-    "category": "author"
-  },
-  {
     "natural_language": "publications by Magrini L as first author",
     "ads_query": "author:(\"^Magrini, L.\") doctype:article",
     "category": "first_author"
@@ -4145,11 +4120,6 @@
     "category": "affiliation"
   },
   {
-    "natural_language": "Vera Rubin Observatory near earth objects",
-    "ads_query": "abs:(\"Vera Rubin\" AND (NEO OR \"near earth object\" OR \"near-earth object\" OR \"near earth objects\"))",
-    "category": "topic"
-  },
-  {
     "natural_language": "articles by Delamere published in 2023",
     "ads_query": "pubdate:[2023-01 TO 2023-12] author:(\"Delamere, P.\") doctype:article",
     "category": "author"
@@ -4217,11 +4187,6 @@
   {
     "natural_language": "research by Batygin Morbidelli 2022",
     "ads_query": "author:\"Batygin Morbidelli\" abs:\"2022\" doctype:article",
-    "category": "topic"
-  },
-  {
-    "natural_language": "asteroid detection surveys near earth objects",
-    "ads_query": "abs:((asteroid* OR asteroids) AND (detection OR discovery OR survey*) AND (\"near-earth object*\" OR NEO*))",
     "category": "topic"
   },
   {
@@ -5170,11 +5135,6 @@
     "category": "topic"
   },
   {
-    "natural_language": "articles by Haehnelt and Rees on cosmology",
-    "ads_query": "author:\"Haehnelt\" abs:\",martin','rees, martin'\" doctype:article",
-    "category": "topic"
-  },
-  {
     "natural_language": "X-ray astronomy reviews",
     "ads_query": "abs:(X-ray AND astronomy) doctype:article property:refereed",
     "category": "property"
@@ -5263,11 +5223,6 @@
     "natural_language": "inflation papers from European Southern Observatory",
     "ads_query": "(inst:\"ESO\" OR aff:\"ESO\") abs:\"inflation\" doctype:article",
     "category": "affiliation"
-  },
-  {
-    "natural_language": "pyrogallol effects on catfish hematology biochemistry",
-    "ads_query": "abs:(pyrogallol AND catfish AND (hematology OR haematology) AND biochemistry)",
-    "category": "topic"
   },
   {
     "natural_language": "useful papers for studying weak lensing",
@@ -7446,7 +7401,7 @@
   },
   {
     "natural_language": "fast blue optical transients choked jets",
-    "ads_query": "abs:\"FBOTs\" abs:\"choked\"",
+    "ads_query": "abs:\"fast blue optical transients\" abs:\"choked\"",
     "category": "content"
   },
   {
@@ -7635,11 +7590,6 @@
     "category": "first_author"
   },
   {
-    "natural_language": "stellar limb darkening measurements",
-    "ads_query": "abs:(stellar AND \"limb darkening\" AND (measurement OR measurements))",
-    "category": "topic"
-  },
-  {
     "natural_language": "work by researchers with ORCID 0000-0001-2345-6789",
     "ads_query": "orcid:0000-0001-2345-6789 doctype:article",
     "category": "author"
@@ -7733,11 +7683,6 @@
     "natural_language": "articles by booth a 2021",
     "ads_query": "pubdate:[2021-01 TO 2021-12] author:(\"^booth, a\") doctype:article",
     "category": "first_author"
-  },
-  {
-    "natural_language": "software developer adoption barriers static analysis tools bug detection",
-    "ads_query": "abs:(\"static analysis\" AND (adoption OR barriers) AND (\"bug detection\" OR bugs))",
-    "category": "content"
   },
   {
     "natural_language": "work by Wiseman first author 2021",
@@ -8495,11 +8440,6 @@
     "category": "first_author"
   },
   {
-    "natural_language": "research by Vega-Ferrero",
-    "ads_query": "author:\"Vega\" abs:\"author=-Ferrero\" doctype:article",
-    "category": "topic"
-  },
-  {
     "natural_language": "work by Marsset M",
     "ads_query": "author:\"Marsset\" abs:\", M\\\" doctype:article",
     "category": "topic"
@@ -8543,11 +8483,6 @@
     "natural_language": "work by Vučković and Baran",
     "ads_query": "author:\"Vučković, M.\" author:\"baran\" doctype:article",
     "category": "author"
-  },
-  {
-    "natural_language": "narrowband radio signals from extraterrestrial intelligence",
-    "ads_query": "abs:(narrowband AND radio AND (signal* OR emission*) AND (technosignature* OR \"extraterrestrial intelligence\" OR SETI))",
-    "category": "topic"
   },
   {
     "natural_language": "articles by Villar V first author",
@@ -8795,11 +8730,6 @@
     "category": "content"
   },
   {
-    "natural_language": "counter-rotating disk galaxies IllustrisTNG simulations observational counterparts",
-    "ads_query": "abs:(\"counter-rotating\" AND disk AND galaxies AND IllustrisTNG AND (observational OR observations OR counterpart*))",
-    "category": "topic"
-  },
-  {
     "natural_language": "work by sahai 2011",
     "ads_query": "author:\"^sahai, r.\" year:2011 doctype:article",
     "category": "first_author"
@@ -8823,11 +8753,6 @@
     "natural_language": "work by Zhou on ionosphere",
     "ads_query": "author:\"^zhou\" ionosphere doctype:article",
     "category": "first_author"
-  },
-  {
-    "natural_language": "publications by abraham roberto on stellar streams and star clusters",
-    "ads_query": "author:\"abraham, roberto\" AND (abs:\"stream\" OR abs:\"star cluster\" OR abs:\"globular cluster\" OR abs:\"dwarf\") doctype:article",
-    "category": "author"
   },
   {
     "natural_language": "articles by bentz 2015",
@@ -9105,11 +9030,6 @@
     "category": "properties"
   },
   {
-    "natural_language": "TeV blazar observations and multiwavelength studies",
-    "ads_query": "abs:(TeV AND blazar* AND (multiwavelength OR \"multi-wavelength\") AND (observation* OR study OR studies)) doctype:article",
-    "category": "topic"
-  },
-  {
     "natural_language": "articles by Clarke, Leonardo from 2023",
     "ads_query": "author:\"^Clarke, Leonardo\", year:2023 doctype:article",
     "category": "first_author"
@@ -9180,11 +9100,6 @@
     "category": "compound"
   },
   {
-    "natural_language": "work by Laurie Rousseau-Nepton on stellar streams and star clusters",
-    "ads_query": "author:\"Rousseau-Nepton, laurie\" AND (abs:\"stream\" OR abs:\"star cluster\" OR abs:\"globular cluster\" OR abs:\"dwarf\") doctype:article",
-    "category": "author"
-  },
-  {
     "natural_language": "O'Sullivan papers from 2004",
     "ads_query": "author:\"^O'sullivan\" year:2004 doctype:article",
     "category": "first_author"
@@ -9198,11 +9113,6 @@
     "natural_language": "research by Kado-Fong and Greene on galaxy evolution",
     "ads_query": "author:\"^kado-fong\" and author:\"greene\" doctype:article",
     "category": "first_author"
-  },
-  {
-    "natural_language": "work by Morales-Olivares",
-    "ads_query": "author:\"Morales\" abs:\"-Olivares, O.G\" doctype:article",
-    "category": "topic"
   },
   {
     "natural_language": "paper with doi 10.1016/0304-3975(96)00072-2",
@@ -9255,18 +9165,13 @@
     "category": "author"
   },
   {
-    "natural_language": "research by abraham roberto on stellar streams and galaxy clusters",
-    "ads_query": "author:\"abraham, roberto\" AND (abs:\"stream\" OR abs:\"cluster\" OR abs:\"dwarf\" OR abs:\"subhalo\") doctype:article",
-    "category": "author"
-  },
-  {
     "natural_language": "work by Portilla Douglas Finkbeiner",
     "ads_query": "author:\"Portilla Douglas\" abs:\"Finkbeiner\" doctype:article",
     "category": "topic"
   },
   {
     "natural_language": "fast blue optical transients and gamma ray bursts",
-    "ads_query": "abs:\"FBOTs\" abs:\"GRBs\"",
+    "ads_query": "abs:\"fast blue optical transients\" abs:\"gamma ray bursts\"",
     "category": "content"
   },
   {
@@ -9806,7 +9711,7 @@
   },
   {
     "natural_language": "fast blue optical transients neutrino detection",
-    "ads_query": "abs:\"FBOTs\" abs:\"neutrinos\"",
+    "ads_query": "abs:\"fast blue optical transients\" abs:\"neutrinos\"",
     "category": "content"
   },
   {
@@ -9823,11 +9728,6 @@
     "natural_language": "work by dbouk and wisdom",
     "ads_query": "author:\"dbouk\" author:\"wisdom\" doctype:article",
     "category": "author"
-  },
-  {
-    "natural_language": "papers on oneAPI Threading Building Blocks oneTBB parallel computing",
-    "ads_query": "abs:(\"oneTBB\" OR \"Threading Building Blocks\" OR \"oneAPI Threading Building Blocks\") AND abs:(parallel OR concurrency OR multithread*) doctype:article",
-    "category": "content"
   },
   {
     "natural_language": "eROSITA survey results and observations 2007 to 2023",
@@ -9956,7 +9856,7 @@
   },
   {
     "natural_language": "IXPE observations of active galactic nuclei",
-    "ads_query": "abs:\"ixpe\" abs:\"agn\"",
+    "ads_query": "abs:\"ixpe\" abs:\"active galactic nuclei\"",
     "category": "content"
   },
   {
@@ -10438,11 +10338,6 @@
     "natural_language": "research by Hughes on disk 2018",
     "ads_query": "author:\"^Hughes\" year:2018 disk doctype:article",
     "category": "first_author"
-  },
-  {
-    "natural_language": "papers about Oumuamua and other interstellar visitors",
-    "ads_query": "abs:(Oumuamua AND (interstellar OR \"interstellar object*\" OR visitor*)) doctype:article",
-    "category": "topic"
   },
   {
     "natural_language": "delta sco X-ray observations",
@@ -22925,11 +22820,6 @@
     "category": "filters"
   },
   {
-    "natural_language": "articles that have bibliographic group assignments",
-    "ads_query": "has:bibgroup abs:\"galaxy survey\" doctype:article",
-    "category": "filters"
-  },
-  {
     "natural_language": "cosmology papers that have volume numbers",
     "ads_query": "has:volume abs:\"cosmology\" doctype:article",
     "category": "filters"
@@ -22960,11 +22850,6 @@
     "category": "filters"
   },
   {
-    "natural_language": "papers with ORCID identifiers from other sources",
-    "ads_query": "has:orcid_other abs:\"exoplanet\"",
-    "category": "filters"
-  },
-  {
     "natural_language": "papers with ORCID user claims about quasars",
     "ads_query": "has:orcid_user abs:\"quasars\"",
     "category": "filters"
@@ -22987,11 +22872,6 @@
   {
     "natural_language": "articles with raw publication info on cosmic microwave background",
     "ads_query": "has:pub_raw abs:\"cosmic microwave background\" doctype:article",
-    "category": "filters"
-  },
-  {
-    "natural_language": "papers that have database assignments in astronomy",
-    "ads_query": "has:database abs:\"stellar populations\" doctype:article",
     "category": "filters"
   },
   {
@@ -24673,5 +24553,70 @@
     "natural_language": "papers about Hellas Planitia geology",
     "ads_query": "planetary_feature:\"Hellas Planitia\" abs:\"geology\"",
     "category": "compound"
+  },
+  {
+    "natural_language": "exoplanet papers excluding solar system studies",
+    "ads_query": "abs:\"exoplanet\" NOT abs:\"solar system\" doctype:article",
+    "category": "compound"
+  },
+  {
+    "natural_language": "papers with associated data",
+    "ads_query": "property:data doctype:article",
+    "category": "property"
+  },
+  {
+    "natural_language": "articles that have bibliographic group assignments",
+    "ads_query": "has:bibgroup doctype:article",
+    "category": "filters"
+  },
+  {
+    "natural_language": "papers with ORCID identifiers from other sources",
+    "ads_query": "has:orcid_other",
+    "category": "filters"
+  },
+  {
+    "natural_language": "papers that have database assignments in astronomy",
+    "ads_query": "has:database database:astronomy doctype:article",
+    "category": "filters"
+  },
+  {
+    "natural_language": "Vera Rubin Observatory near earth objects",
+    "ads_query": "abs:\"Vera Rubin\" abs:\"near earth objects\"",
+    "category": "topic"
+  },
+  {
+    "natural_language": "asteroid detection surveys near earth objects",
+    "ads_query": "abs:\"asteroid\" abs:\"detection\" abs:\"near-earth objects\"",
+    "category": "topic"
+  },
+  {
+    "natural_language": "work by Sivanandam on stellar streams and globular clusters",
+    "ads_query": "author:\"Sivanandam\" abs:\"stellar streams\" abs:\"globular clusters\" doctype:article",
+    "category": "author"
+  },
+  {
+    "natural_language": "narrowband radio signals from extraterrestrial intelligence",
+    "ads_query": "abs:\"narrowband\" abs:\"radio\" abs:\"extraterrestrial intelligence\"",
+    "category": "topic"
+  },
+  {
+    "natural_language": "articles by Salama on polycyclic aromatic hydrocarbons",
+    "ads_query": "author:\"Salama, Farid\" abs:\"polycyclic aromatic hydrocarbons\" doctype:article",
+    "category": "author"
+  },
+  {
+    "natural_language": "articles by Haehnelt and Rees on cosmology",
+    "ads_query": "author:\"Haehnelt\" author:\"Rees\" abs:\"cosmology\" doctype:article",
+    "category": "author"
+  },
+  {
+    "natural_language": "research by Vega-Ferrero",
+    "ads_query": "author:\"Vega-Ferrero\" doctype:article",
+    "category": "author"
+  },
+  {
+    "natural_language": "work by Morales-Olivares",
+    "ads_query": "author:\"Morales-Olivares\" doctype:article",
+    "category": "author"
   }
 ]

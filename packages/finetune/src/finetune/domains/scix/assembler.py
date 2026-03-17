@@ -396,6 +396,11 @@ def assemble_query(intent: IntentSpec, examples: list[GoldExample] | None = None
         if object_clause:
             clauses.append(object_clause)
 
+    # Build planetary feature clause
+    if intent.planetary_features:
+        for pf in intent.planetary_features:
+            clauses.append(f'planetary_feature:"{pf}"')
+
     # Build affiliation clause
     if intent.affiliations:
         aff_clause = _build_affiliation_clause(intent.affiliations)
@@ -419,6 +424,65 @@ def assemble_query(intent: IntentSpec, examples: list[GoldExample] | None = None
                 # Count valid values
                 valid_values = _validate_enum_values(field_name, values)
                 constraint_count_after += len(valid_values)
+
+    # Build title clause
+    if intent.title_terms:
+        for term in intent.title_terms:
+            quoted = _quote_value(term)
+            clauses.append(f"title:{quoted}")
+
+    # Build full-text clause
+    if intent.full_text_terms:
+        for term in intent.full_text_terms:
+            quoted = _quote_value(term)
+            clauses.append(f"full:{quoted}")
+
+    # Build has: clause
+    if intent.has_fields:
+        for h in sorted(intent.has_fields):
+            clauses.append(f"has:{h}")
+
+    # Build citation_count range
+    if intent.citation_count_min is not None or intent.citation_count_max is not None:
+        lo = str(intent.citation_count_min) if intent.citation_count_min is not None else "*"
+        hi = str(intent.citation_count_max) if intent.citation_count_max is not None else "*"
+        clauses.append(f"citation_count:[{lo} TO {hi}]")
+
+    # Build read_count range
+    if intent.read_count_min is not None:
+        clauses.append(f"read_count:[{intent.read_count_min} TO *]")
+
+    # Build ack clause
+    if intent.ack_terms:
+        for term in intent.ack_terms:
+            quoted = _quote_value(term)
+            clauses.append(f"ack:{quoted}")
+
+    # Build grant clause
+    if intent.grant_terms:
+        for term in intent.grant_terms:
+            clauses.append(f"grant:{term}")
+
+    # Build exact match clauses (=field:"value")
+    if intent.exact_match_fields:
+        for fld, val in intent.exact_match_fields.items():
+            clauses.append(f'={fld}:"{val}"')
+
+    # Build negation clauses
+    if intent.negated_terms:
+        for term in intent.negated_terms:
+            quoted = _quote_value(term)
+            clauses.append(f"NOT abs:{quoted}")
+    if intent.negated_properties:
+        for prop in sorted(intent.negated_properties):
+            clauses.append(f"NOT property:{prop}")
+    if intent.negated_doctypes:
+        for dt in sorted(intent.negated_doctypes):
+            clauses.append(f"NOT doctype:{dt}")
+
+    # Append passthrough clauses (complex patterns the parser couldn't decompose)
+    if intent.passthrough_clauses:
+        clauses.extend(intent.passthrough_clauses)
 
     # Join all clauses with space (implicit AND)
     base_query = " ".join(clauses)

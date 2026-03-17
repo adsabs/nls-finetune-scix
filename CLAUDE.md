@@ -1,8 +1,10 @@
 # NLS Fine-Tune SciX
 
-## Current Focus: Expanding Training Data
+## Current Focus: Phase B — IntentSpec JSON Training Format
 
-We are generating NL-to-query training pairs using SciX help documentation and the Solr schema as references.
+We have a hybrid architecture where NER and NLS (fine-tuned LLM) run in parallel. Results are merged at the **intent level** (not string level) and the **assembler** always produces the final syntax.
+
+**Phase B (implemented):** LLM can now output **compact IntentSpec JSON** directly (with `<think>` reasoning block), instead of raw ADS query strings. The server auto-detects the format and routes to the appropriate merge path. Training data conversion script produces intent-format JSONL with think traces.
 
 ## Task
 
@@ -11,11 +13,65 @@ Convert natural language → ADS/SciX structured search queries for [SciXplorer.
 - Input: "papers by Hawking on black hole radiation from the 1970s"
 - Output: `author:"Hawking, S" abs:"black hole radiation" pubdate:[1970 TO 1979]`
 
+## Hybrid Architecture
+
+### How It Works
+1. **Nectar** calls our `/pipeline` endpoint (2s timeout), falls back to `/v1/chat/completions`
+2. **Server** runs NER + NLS in parallel when `HYBRID_MODE=true` (default)
+3. **Parse**: LLM's raw query string → `parse_query_to_intent()` → IntentSpec
+4. **Merge**: `merge_intents(ner_intent, llm_intent, nl_text)` with per-field policies
+5. **Assemble**: merged IntentSpec → `assemble_query()` → clean ADS query
+6. **Post-processing** rewrites apply to final output: inst expansion, bibstem normalization, author wildcarding, UAT augmentation
+7. **ADS query passthrough**: if input is already ADS syntax, skip NER/NLS and apply post-processing only
+
+### Data Flow
+```
+NL text ──→ NER ──────────→ IntentSpec_NER ──┐
+                                              ├─→ merge_intents() → IntentSpec_merged → assembler → clean query
+NL text ──→ LLM → raw query → parse_query() → IntentSpec_LLM ──┘
+```
+
+### Phase B Data Flow (IntentSpec JSON output)
+```
+NL text ──→ NER ──────────→ IntentSpec_NER ──┐
+                                              ├─→ merge_intents() → IntentSpec_merged → assembler → clean query
+NL text ──→ LLM → <think>...</think> + JSON → IntentSpec_LLM ──┘
+```
+Server auto-detects format: IntentSpec JSON skips `parse_query_to_intent()` and 3 string rewrites (inst, bibstem, author wildcarding — assembler handles these). UAT augmentation still runs post-assembly.
+
+### Merge Per-Field Policies
+| Field | Preferred Source | Rationale |
+|-------|-----------------|-----------|
+| authors | NER | Better name formatting |
+| free_text_terms | LLM | Understands context better |
+| year_from/year_to | NER if extracted | Validated against patterns |
+| affiliations | NER | Validated against institution_synonyms |
+| bibstems | NER | Validated against bibstem_synonyms |
+| operator | LLM | Handles nested/complex operators |
+| negation/has/citation_count | LLM only | NER can't detect these |
+| doctype/property | Union | But strips doctype:article from generic "papers" |
+
+### Merge Module (`merge.py`)
+- `merge_intents(ner, llm, nl_text)` → IntentSpec — per-field merge with clear policies
+- `merge_ner_and_nls(ner_result, nls_query, nl_text)` → `MergeResult` — orchestrator
+- Returns `MergeResult` with: query, source ("hybrid"/"nls_only"/"ner_only"), fields_injected, timing, ner_intent, llm_intent, merged_intent (debug traces)
+
+### Parse Query Module (`parse_query.py`)
+- `parse_query_to_intent(query)` → IntentSpec — inverse of assembler
+- Extracts all field:value pairs, validates enum values, handles negation, operators, ranges
+
+### Debug Endpoints
+- `GET /debug/hybrid?q=...` — Run hybrid merge, returns: final query, source, raw NLS/NER queries, **intent traces** (NER/LLM/merged IntentSpec dicts), fields_injected, timing
+- `GET /debug/pipeline?q=...` — Run NER pipeline only, returns result or error
+
+### Environment Variables
+- `HYBRID_MODE=true` — Enable hybrid merge (default). Set `false` for NER-only when pipeline available.
+
 ## Training Data
 
 - **Format:** JSONL with chat messages (system/user/assistant)
-- **Gold examples:** `data/datasets/raw/gold_examples.json` (4,938 pairs)
-- **Processed train/val:** `data/datasets/processed/train.jsonl` (1,074) / `val.jsonl` (120)
+- **Gold examples:** `data/datasets/raw/gold_examples.json` (4,924 pairs)
+- **Processed train/val:** `data/datasets/processed/train.jsonl` (5,185) / `val.jsonl` (577)
 - **Categories:** 21 types (first_author, unfielded, author, content, publication, operator, filters, compound, conversational, etc.)
 
 ### Example pair (gold_examples.json)
@@ -38,7 +94,9 @@ Convert natural language → ADS/SciX structured search queries for [SciXplorer.
 | Title only | `title:"exact phrase"` | Quoted |
 | Date range | `pubdate:[2020 TO 2023]` | Bracket range |
 | Journal | `bibstem:"ApJ"` | MUST be quoted |
-| Object | `object:M31` | Astronomical object; **requires `d=astrophysics` discipline param** |
+| Object | `object:M31` | Astronomical object |
+| UAT | `uat:"Dark matter"` | Unified Astronomy Thesaurus controlled vocabulary; **runtime-augmented via `uat_lookup.py`** |
+| Planetary feature | `planetary_feature:"crater"` | Planetary nomenclature (target, feature type, or feature name); **runtime-augmented via `planetary_feature_lookup.py`** |
 | Citation count | `citation_count:[100 TO *]` | Numeric range |
 | Affiliation (virtual) | `aff:"Berkeley"` | Free-text affiliation search |
 | Institution (curated) | `inst:"MIT"` | Curated institutional abbreviation |
@@ -48,13 +106,9 @@ Convert natural language → ADS/SciX structured search queries for [SciXplorer.
 
 Full syntax: https://ui.adsabs.harvard.edu/help/search/search-syntax
 
-### Discipline-Dependent Fields
-
-Some fields only work when the `d=astrophysics` discipline parameter is set in the search request:
-- `object:` — astronomical object search (e.g., `object:"M31"`, `object:"Crab Nebula"`)
-- `uat:` — Unified Astronomy Thesaurus terms
-
-Without the discipline param, these fields return HTTP 400. The server (`docker/server.py`) must pass `d=astrophysics` when the query contains these fields.
+### Non-functional Fields
+- `mention:` and `credit:` do NOT work as search fields (e.g., `mention:"astropy"` fails). Use `abs:"astropy" mention_count:[1 TO *]` instead.
+- `mentions()` and `credits()` second-order operators are NOT live.
 
 ### Operators
 | Operator | Example |
@@ -179,12 +233,22 @@ Names with hyphens or apostrophes have inconsistent ADS indexing (e.g., "de Groo
 - **similar()** — now 45 examples (was 35)
 - **references()** — now 43 examples (was 33)
 
+### Recently addressed (2026-03-05, +112 examples)
+- **Pasted reference parsing** — 30 examples (bibcode, DOI, arXiv ID, formatted citations with volume/page)
+- **UAT field** — 10 examples + runtime `uat_lookup.py` module (4,144 terms, augments abs: with uat: at serving time)
+- **planetary_feature:** — 15 examples (feature types, feature names, targets from USGS Gazetteer)
+- **NOT/negation** — +20 examples (now ~71 total)
+- **Software/data mentions** — 10 examples using `abs:` + `mention_count:`/`credit_count:` combo
+- **Date diversity** — 10 examples (relative dates: "last 5 years", "since 2020", "this week", NOW- syntax)
+- **caption:** — 5 examples (figure/table caption search, was zero)
+- **arxiv: identifier** — 5 examples (arXiv ID lookup, was zero)
+- **author_count:/page_count:** — 8 examples (single-author, large collaborations, short letters)
+
 ### Remaining gaps
 1. **data field** — 7/24 archives still uncovered: ARI, BICEP2, GCPD, GTC, INES, ISO, NOAO
-2. **has field** — ~14/34 values still uncovered (identifier, keyword, pub, title, abstract, author, etc. have few dedicated examples)
-3. **lang, page, volume, issue, caption** — still zero dedicated examples
+2. **has field** — ~14/34 values still uncovered
+3. **lang, page (standalone), issue** — low/zero dedicated examples (page/volume covered via reference parsing)
 4. **simbad, vizier (as fields)** — still zero examples (covered via `data:SIMBAD`, `data:VizieR`)
-5. **NOT/negation** — improved but still underrepresented relative to AND/OR
 
 ## SciX vs Google Scholar Gap Analysis
 
@@ -220,12 +284,16 @@ User experience testing identified 7 issue types. Some are addressable by NLS tr
 - `packages/finetune/src/finetune/domains/scix/intent_spec.py` — IntentSpec dataclass (NER→assembler contract)
 - `packages/finetune/src/finetune/domains/scix/institution_lookup.py` — Institution RAG lookup for `(inst: OR aff:)` clauses
 - `packages/finetune/src/finetune/domains/scix/bibstem_lookup.py` — Journal bibstem lookup and `rewrite_bibstem_values()` post-processor
+- `packages/finetune/src/finetune/domains/scix/uat_lookup.py` — UAT thesaurus lookup; `rewrite_abs_to_abs_or_uat()` augments abs: with uat: at serving time
+- `packages/finetune/src/finetune/domains/scix/planetary_feature_lookup.py` — Planetary feature Gazetteer lookup; NER extraction of multi-word feature names + `rewrite_abs_to_abs_or_planetary_feature()` augments abs: with planetary_feature: at serving time
 - `packages/finetune/src/finetune/domains/scix/fields.py` — ADS field definitions
 - `packages/finetune/src/finetune/domains/scix/field_constraints.py` — Enum values
 - `packages/finetune/src/finetune/domains/scix/validate.py` — Query validation
 - `packages/finetune/src/finetune/domains/scix/constrain.py` — Post-assembly constraint filter
+- `packages/finetune/src/finetune/domains/scix/parse_query.py` — Parses LLM raw query string back into IntentSpec (inverse of assembler)
+- `packages/finetune/src/finetune/domains/scix/merge.py` — Intent-level merge (parse LLM→IntentSpec, merge with NER IntentSpec, assembler produces final query)
 - `packages/finetune/src/finetune/domains/scix/pipeline.py` — End-to-end NER pipeline orchestration
-- `docker/server.py` — Inference server (vLLM-compatible + pipeline endpoints); post-processes LLM output with `rewrite_aff_to_inst_or_aff()`, `rewrite_bibstem_values()`, and `rewrite_complex_author_wildcards()`
+- `docker/server.py` — Inference server (hybrid NER+NLS endpoints); runs NER and NLS in parallel, merges results; post-processes LLM output with `rewrite_aff_to_inst_or_aff()`, `rewrite_bibstem_values()`, `rewrite_complex_author_wildcards()`, `rewrite_abs_to_abs_or_uat()`, and `rewrite_abs_to_abs_or_planetary_feature()`
 
 ### Scripts
 - `scripts/generate_nl.py` — NL generation from queries
@@ -260,6 +328,10 @@ All template-based, deterministic (seeded), output to `data/datasets/generated/`
 - `scripts/fix_validation_issues.py` — Fixes for validation issues in coverage-gap examples (idempotent)
 - `scripts/generate_blog_examples.py` — Blog-sourced patterns: nested operators (trending(useful(...))), similar()+entdate, property:(...) multi-value, bibstem wildcards/OR, full: field, data-linking, earth science collection (91 examples)
 - `scripts/clean_gold_examples.py` — Removes non-academic entries, fixes encoding/authors/alignment in gold_examples.json
+- `scripts/realism_cleanup.py` — Realism cleanup: removes broken queries (docs hashes, DOIs in abs, year:1641), deduplicates content-field cross-products, rewrites template NL (bibgroup, field-reference, syntax, has:, exact-match), reduces OA subtype over-representation (118 removed, 205 rewritten)
+- `scripts/generate_training_improvements.py` — Coverage gap improvements: reference parsing, UAT, negation, software mentions, date diversity, caption, arxiv IDs, count filters (98 examples + 15 planetary_feature)
+- `scripts/convert_to_intent_format.py` — Converts gold_examples.json to intent format (IntentSpec JSON + think traces) for Phase B training
+- `scripts/remove_synonym_expansion.py` — Removes 24 examples teaching LLM synonym expansion (OR-lists, fabricated abs: terms, broken queries), fixes 4 abbreviation swaps, adds 13 clean replacements
 
 ## Reference Material for Training Data Generation
 
@@ -318,7 +390,7 @@ python scripts/collect_institutions.py \
 
 ### Source 5: Mentions/Credits Design Doc
 
-`data/reference/Indexing and searching mentions.md` documents the mentions/credits system (software/data tracking). Key fields: `mention`, `credit`, `mention_count`, `credit_count`. Note: `mentions()` and `credits()` second-order operators are documented in the design doc but are NOT live — use `has:mention`, `has:credit`, `mention_count`, and `credit_count` instead.
+`data/reference/Indexing and searching mentions.md` documents the mentions/credits system (software/data tracking). Key fields: `mention_count`, `credit_count`. Note: `mention:` and `credit:` do NOT work as search fields; `mentions()` and `credits()` operators are NOT live. Use `abs:"software_name" mention_count:[1 TO *]` for software-mention queries.
 
 ### Source 6: Blog Post Query Examples
 
@@ -332,4 +404,14 @@ Raw blog posts are archived in `data/reference/blog/` (60 files, 2015–2025) fo
 - `2022-09-06-ads-object-search.md` — `object:` search, `=` modifier, Boolean within `object:`
 - `2020-04-06-nasa-open-access.md` — complex property/ack/aff/bibstem combinations, `=keyword:`
 - `2020-01-15-affiliations-feature.md` and `2021-04-15-affils-update.md` — `aff:`, `inst:`, `aff_id:`, `affil:` differences
+
+### Source 7: UAT (Unified Astronomy Thesaurus)
+
+`data/model/uat_synonyms.json` maps 4,144 terms (prefLabels + altLabels) to canonical UAT concepts. Built from `data/reference/aas_the-unified-astronomy-thesaurus_6-0-0.json` (UAT v6.0, 2,312 concepts). Runtime module `uat_lookup.py` augments `abs:"topic"` with `OR uat:"UAT Label"` when there's a match. Source: https://vocabs.ardc.edu.au/viewById/119
+
+### Source 8: Planetary Feature Gazetteer
+
+`data/reference/Gazetteer_of_Planetary_Nomenclature_Exported_Nov_7_2024.csv` — USGS planetary nomenclature (16,243 features, 48 targets, 56 feature types). Used as reference for `planetary_feature:` training examples. Source: https://github.com/adsabs/ADSPlanetaryNamesPipeline
+
+`data/model/planetary_feature_synonyms.json` maps 8,915 terms (feature names, feature types, targets) to canonical forms from the USGS Gazetteer. Runtime module `planetary_feature_lookup.py` augments `abs:"feature name"` with `OR planetary_feature:"Canonical Name"` when there's a match. NER also extracts multi-word feature names (e.g. "Olympus Mons", "Valles Marineris") directly into IntentSpec.
 
