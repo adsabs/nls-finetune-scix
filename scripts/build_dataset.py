@@ -26,6 +26,7 @@ from pathlib import Path
 # Add packages/finetune/src to path
 sys.path.insert(0, str(Path(__file__).parent.parent / "packages" / "finetune" / "src"))
 
+from finetune.domains.scix.prompts import SYSTEM_PROMPT_INTENT
 from finetune.domains.scix.validate import lint_query, validate_nl
 
 
@@ -67,14 +68,30 @@ def validate_pair(pair: dict) -> tuple[bool, list[str]]:
     return len(issues) == 0, issues
 
 
-def to_training_format(pair: dict, date: str = "2025-12-15") -> dict:
-    """Convert a NL-query pair to chat training format."""
-    system_content = (
-        'Convert natural language to ADS search query. Output JSON: {"query": "..."}'
-    )
+def to_training_format(pair: dict, date: str = "2025-12-15", use_intent: bool = False) -> dict:
+    """Convert a NL-query pair to chat training format.
+
+    Args:
+        pair: Dict with natural_language, ads_query, category, and optionally
+              intent_json and think_trace (for intent format).
+        date: Date string for the user message.
+        use_intent: If True, use intent format (<think> + IntentSpec JSON).
+
+    Returns:
+        Training example in chat message format.
+    """
+    if use_intent and "intent_json" in pair:
+        system_content = SYSTEM_PROMPT_INTENT
+        think_block = f"<think>\n{pair['think_trace']}\n</think>\n"
+        assistant_content = think_block + json.dumps(pair["intent_json"])
+    else:
+        system_content = (
+            'Convert natural language to ADS search query. Output JSON: {"query": "..."}'
+        )
+        assistant_content = json.dumps({"query": pair["ads_query"]})
+
     user_content = f"Query: {pair['natural_language']}\nDate: {date}"
-    assistant_content = json.dumps({"query": pair["ads_query"]})
-    
+
     return {
         "messages": [
             {"role": "system", "content": system_content},
@@ -127,6 +144,13 @@ def main() -> None:
         type=str,
         default="2025-12-15",
         help="Date for training examples"
+    )
+    parser.add_argument(
+        "--format",
+        type=str,
+        choices=["query", "intent"],
+        default="query",
+        help="Output format: 'query' (current, JSON with query string) or 'intent' (<think> + IntentSpec JSON)"
     )
     args = parser.parse_args()
     
@@ -219,8 +243,11 @@ def main() -> None:
     print(f"  Val:   {len(val_pairs):5}")
     
     # Convert to training format
-    train_data = [to_training_format(p, args.date) for p in train_pairs]
-    val_data = [to_training_format(p, args.date) for p in val_pairs]
+    use_intent = args.format == "intent"
+    if use_intent:
+        print(f"\n  Format: intent (<think> + IntentSpec JSON)")
+    train_data = [to_training_format(p, args.date, use_intent=use_intent) for p in train_pairs]
+    val_data = [to_training_format(p, args.date, use_intent=use_intent) for p in val_pairs]
     
     # Save
     output_dir = Path(args.output_dir)

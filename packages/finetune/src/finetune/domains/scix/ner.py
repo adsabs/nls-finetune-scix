@@ -11,6 +11,9 @@ Words like "citing", "references", "similar" as topics do NOT trigger operators.
 import re
 from datetime import datetime
 
+import json
+from pathlib import Path
+
 from .field_constraints import BIBGROUPS, COLLECTIONS, DOCTYPES, PROPERTIES
 from .intent_spec import IntentSpec
 from .pipeline import is_ads_query  # noqa: E402
@@ -43,10 +46,9 @@ DOCTYPE_SYNONYMS: dict[str, str] = {
     "articles": "article",
     "journal article": "article",
     "journal articles": "article",
-    "paper": "article",
-    "papers": "article",
-    "publication": "article",
-    "publications": "article",
+    # NOTE: "paper"/"papers"/"publication"/"publications" intentionally OMITTED.
+    # These are colloquial terms for any research output, not specifically
+    # doctype:article. Mapping them to article excludes eprints/proceedings.
     # Thesis types
     "thesis": "phdthesis",
     "phd": "phdthesis",
@@ -108,10 +110,8 @@ BIBGROUP_SYNONYMS: dict[str, str] = {
     "keck": "Keck",
     "gemini": "Gemini",
     "subaru": "Subaru",
-    # Gravitational waves
+    # Gravitational wave observatory (NOT gravitational wave topics)
     "ligo": "LIGO",
-    "gravitational wave": "LIGO",
-    "gravitational waves": "LIGO",
 }
 
 COLLECTION_SYNONYMS: dict[str, str] = {
@@ -131,6 +131,70 @@ COLLECTION_SYNONYMS: dict[str, str] = {
     "heliophysics": "earthscience",
     "space weather": "earthscience",
 }
+
+
+# =============================================================================
+# AFFILIATION SYNONYMS (loaded from institution_synonyms.json)
+# =============================================================================
+
+# Build lookup: common_name.lower() -> display name (for NER extraction)
+# We match common names in user text and return the display name to put into
+# IntentSpec.affiliations. The assembler then uses institution_lookup to
+# produce (inst: OR aff:) clauses.
+AFFILIATION_SYNONYMS: dict[str, str] = {}
+_INST_SYNONYMS_PATH = Path(__file__).resolve().parents[6] / "data" / "model" / "institution_synonyms.json"
+if _INST_SYNONYMS_PATH.exists():
+    with open(_INST_SYNONYMS_PATH) as _f:
+        _inst_data = json.load(_f)
+    for _abbrev, _info in _inst_data.get("synonyms", {}).items():
+        for _name in _info["common_names"]:
+            AFFILIATION_SYNONYMS[_name.lower()] = _info["inst_abbrev"]
+
+# Context words that must precede single common-word institution names
+# (e.g., "Cambridge", "Stanford", "Harvard") to avoid false positives.
+_AFFIL_CONTEXT_WORDS = re.compile(
+    r"\b(?:from|at|affiliated\s+with|based\s+at|researchers?\s+at|"
+    r"scientists?\s+at|astronomers?\s+at|group\s+at|team\s+at|"
+    r"department\s+at|people\s+at|work\s+at|working\s+at)\s+$",
+    re.IGNORECASE,
+)
+
+# Single-word institution names that are also common English words.
+# These require a preceding context word to match.
+_AMBIGUOUS_INST_NAMES: set[str] = {
+    "cambridge", "oxford", "stanford", "princeton", "harvard",
+    "columbia", "yale", "berkeley", "michigan", "edinburgh",
+    "leiden", "tsinghua",
+}
+
+
+# =============================================================================
+# JOURNAL SYNONYMS (loaded from bibstem_synonyms.json)
+# =============================================================================
+
+# Build lookup: common_name.lower() -> bibstem_key (for NER extraction)
+JOURNAL_SYNONYMS: dict[str, str] = {}
+_BIBSTEM_SYNONYMS_PATH = Path(__file__).resolve().parents[6] / "data" / "model" / "bibstem_synonyms.json"
+if _BIBSTEM_SYNONYMS_PATH.exists():
+    with open(_BIBSTEM_SYNONYMS_PATH) as _f:
+        _bibstem_data = json.load(_f)
+    for _bkey, _binfo in _bibstem_data.get("synonyms", {}).items():
+        # Index the bibstem key itself (e.g., "MNRAS" -> "MNRAS")
+        JOURNAL_SYNONYMS[_bkey.lower()] = _bkey
+        for _bname in _binfo["common_names"]:
+            JOURNAL_SYNONYMS[_bname.lower()] = _bkey
+
+# Single-word journal names that are also common English words.
+# These require a preceding context word (e.g., "in", "published in") to match.
+_AMBIGUOUS_JOURNAL_NAMES: set[str] = {
+    "nature", "science", "icarus", "astrobiology",
+}
+
+# Context words that must precede ambiguous journal names
+_JOURNAL_CONTEXT_WORDS = re.compile(
+    r"\b(?:in|published\s+in|from|appearing\s+in|printed\s+in)\s+$",
+    re.IGNORECASE,
+)
 
 
 # =============================================================================
@@ -440,6 +504,8 @@ YEAR_PATTERNS: list[tuple[re.Pattern, str]] = [
     (re.compile(r"\bthrough\s+(\d{4})\b", re.IGNORECASE), "until"),
     # Relative: "last N years", "past N years"
     (re.compile(r"\b(?:last|past)\s+(\d+)\s+years?\b", re.IGNORECASE), "last_n"),
+    # "recent" alone → last 5 years
+    (re.compile(r"\brecent\b", re.IGNORECASE), "recent"),
     # Single year: "in 2020", "from 2020"
     (re.compile(r"\bin\s+(\d{4})\b", re.IGNORECASE), "exact"),
     # Decade: "in the 1990s", "from the 2000s"
@@ -688,6 +754,15 @@ def extract_intent(text: str) -> IntentSpec:
     intent.bibgroup, working_text = _extract_bibgroups(working_text)
     intent.collection, working_text = _extract_collections(working_text)
 
+    # Extract affiliations
+    intent.affiliations, working_text = _extract_affiliations(working_text)
+
+    # Extract journals (bibstems)
+    intent.bibstems, working_text = _extract_journals(working_text)
+
+    # Extract planetary features (before topic extraction so names are consumed)
+    intent.planetary_features, working_text = _extract_planetary_features(working_text)
+
     # Remaining text becomes free text terms (topics)
     intent.free_text_terms, intent.or_terms = _extract_topics(working_text)
 
@@ -768,6 +843,9 @@ def _extract_years(text: str) -> tuple[int | None, int | None, str]:
                 decade_start = int(match.group(1))
                 year_from = decade_start
                 year_to = decade_start + 9
+            elif pattern_type == "recent":
+                year_from = current_year - 5
+                year_to = current_year
 
             # Remove matched phrase from text
             cleaned_text = pattern.sub(" ", cleaned_text)
@@ -868,6 +946,10 @@ def _extract_doctypes(text: str) -> tuple[set[str], str]:
     return doctypes, cleaned_text
 
 
+# "Hubble" in these cosmology terms is NOT the telescope — do not map to HST
+_BIBGROUP_HUBBLE_BLOCKLIST = frozenset({"hubble tension", "hubble constant", "hubble parameter"})
+
+
 def _extract_bibgroups(text: str) -> tuple[set[str], str]:
     """Extract bibgroup values from text using synonym map.
 
@@ -881,6 +963,10 @@ def _extract_bibgroups(text: str) -> tuple[set[str], str]:
     cleaned_text = text.lower()
 
     for synonym in sorted(BIBGROUP_SYNONYMS.keys(), key=len, reverse=True):
+        # "hubble" alone → HST; "hubble tension"/"hubble constant" → cosmology term, keep as topic
+        if synonym == "hubble":
+            if any(phrase in cleaned_text for phrase in _BIBGROUP_HUBBLE_BLOCKLIST):
+                continue
         # Use word boundary matching to avoid partial matches
         pattern = re.compile(r"\b" + re.escape(synonym) + r"\b")
         if pattern.search(cleaned_text):
@@ -916,6 +1002,139 @@ def _extract_collections(text: str) -> tuple[set[str], str]:
 
     cleaned_text = re.sub(r"\s+", " ", cleaned_text).strip()
     return collections, cleaned_text
+
+
+def _extract_affiliations(text: str) -> tuple[list[str], str]:
+    """Extract institutional affiliations from text.
+
+    Matches against institution_synonyms.json common names. Uses false-positive
+    mitigation: single ambiguous words (e.g. "Cambridge", "Stanford") only match
+    when preceded by context words like "from", "at", "based at". Multi-word
+    names and acronyms (all-caps, 2+ chars) always match.
+
+    Args:
+        text: Input text to scan
+
+    Returns:
+        Tuple of (list of institution display names, text with matches removed)
+    """
+    affiliations: list[str] = []
+    cleaned_text = text
+
+    # Sort by length descending so longer names match first
+    for synonym in sorted(AFFILIATION_SYNONYMS.keys(), key=len, reverse=True):
+        pattern = re.compile(r"\b" + re.escape(synonym) + r"\b", re.IGNORECASE)
+        match = pattern.search(cleaned_text)
+        if not match:
+            continue
+
+        matched_text = match.group(0)
+        key_lower = synonym.lower()
+
+        # False-positive check for ambiguous single-word names
+        if key_lower in _AMBIGUOUS_INST_NAMES:
+            # Must be preceded by context word OR be an exact case match (unlikely for common words)
+            prefix = cleaned_text[:match.start()]
+            if not _AFFIL_CONTEXT_WORDS.search(prefix):
+                continue
+
+        # Acronyms (all-caps, 2+ chars) and multi-word names always match
+        display_name = AFFILIATION_SYNONYMS[key_lower]
+        affiliations.append(display_name)
+        cleaned_text = pattern.sub(" ", cleaned_text, count=1)
+
+    # Deduplicate while preserving order
+    seen: set[str] = set()
+    unique: list[str] = []
+    for aff in affiliations:
+        if aff not in seen:
+            seen.add(aff)
+            unique.append(aff)
+
+    cleaned_text = re.sub(r"\s+", " ", cleaned_text).strip()
+    return unique, cleaned_text
+
+
+def _extract_journals(text: str) -> tuple[list[str], str]:
+    """Extract journal names from text and return bibstem abbreviations.
+
+    Matches against bibstem_synonyms.json common names. Uses false-positive
+    mitigation: single ambiguous words (e.g. "Nature", "Science") only match
+    when preceded by context words like "in", "published in". Multi-word
+    names and short acronyms always match.
+
+    Args:
+        text: Input text to scan
+
+    Returns:
+        Tuple of (list of bibstem abbreviations, text with matches removed)
+    """
+    bibstems: list[str] = []
+    cleaned_text = text
+
+    # Sort by length descending so longer names match first
+    for synonym in sorted(JOURNAL_SYNONYMS.keys(), key=len, reverse=True):
+        pattern = re.compile(r"\b" + re.escape(synonym) + r"\b", re.IGNORECASE)
+        match = pattern.search(cleaned_text)
+        if not match:
+            continue
+
+        key_lower = synonym.lower()
+
+        # False-positive check for ambiguous single-word names
+        if key_lower in _AMBIGUOUS_JOURNAL_NAMES:
+            prefix = cleaned_text[:match.start()]
+            if not _JOURNAL_CONTEXT_WORDS.search(prefix):
+                continue
+
+        bibstem = JOURNAL_SYNONYMS[key_lower]
+        bibstems.append(bibstem)
+        cleaned_text = pattern.sub(" ", cleaned_text, count=1)
+
+    # Deduplicate while preserving order
+    seen: set[str] = set()
+    unique: list[str] = []
+    for b in bibstems:
+        if b not in seen:
+            seen.add(b)
+            unique.append(b)
+
+    cleaned_text = re.sub(r"\s+", " ", cleaned_text).strip()
+    return unique, cleaned_text
+
+
+def _extract_planetary_features(text: str) -> tuple[list[str], str]:
+    """Extract planetary feature names from text using Gazetteer lookup.
+
+    Only matches multi-word feature names (e.g. "Olympus Mons", "Valles Marineris")
+    to avoid false positives from single-word names like "Gale" or "Abel".
+
+    Args:
+        text: Input text to scan
+
+    Returns:
+        Tuple of (list of canonical feature names, text with feature names removed)
+    """
+    from .planetary_feature_lookup import find_planetary_features_in_text
+
+    matches = find_planetary_features_in_text(text)
+    if not matches:
+        return [], text
+
+    features = []
+    cleaned = text
+    for matched_text, canonical in matches:
+        features.append(canonical)
+        # Remove the matched text from working text (case-insensitive)
+        cleaned = re.sub(
+            r"\b" + re.escape(matched_text) + r"\b",
+            " ",
+            cleaned,
+            flags=re.IGNORECASE,
+        )
+
+    cleaned = re.sub(r"\s+", " ", cleaned).strip()
+    return features, cleaned
 
 
 def _extract_topics(text: str) -> tuple[list[str], list[str]]:
@@ -1007,6 +1226,10 @@ def _set_confidence_scores(intent: IntentSpec) -> None:
         confidence["bibgroup"] = 0.9
     if intent.collection:
         confidence["database"] = 0.9
+    if intent.affiliations:
+        confidence["affiliations"] = 0.9
+    if intent.bibstems:
+        confidence["bibstems"] = 0.9
     if intent.free_text_terms:
         confidence["topics"] = 0.7  # Lower - just remaining words
     if intent.or_terms:

@@ -1,0 +1,972 @@
+[
+  {
+    "index": 21,
+    "reason": "p0: absurd date range (1641)",
+    "natural_language": "laser plasma filament energy dependence studies",
+    "ads_query": "(laser AND plasma AND filament AND dependence AND laser AND energy) AND year:1641-2024 doctype:article",
+    "category": "publication"
+  },
+  {
+    "index": 100,
+    "reason": "p0: docs() hash in query",
+    "natural_language": "papers about machine learning applications in stellar classification",
+    "ads_query": "abs:(docs(ee0441a31e5b598d10c8d7fe0854a2a9)) doctype:article",
+    "category": "topic"
+  },
+  {
+    "index": 151,
+    "reason": "p0: off-topic: electronic payment security",
+    "natural_language": "electronic payment security solata digital transactions",
+    "ads_query": "abs:(Security AND Electronic AND Payment)",
+    "category": "topic"
+  },
+  {
+    "index": 241,
+    "reason": "p0: DOI in abs: field",
+    "natural_language": "papers on stellar atmospheres and spectroscopy in astronomy astrophysics",
+    "ads_query": "abs:(10.1051/0004-6361/201525830) doctype:article",
+    "category": "topic"
+  },
+  {
+    "index": 282,
+    "reason": "p0: DOI in abs: field",
+    "natural_language": "looking for martian surface composition analysis papers",
+    "ads_query": "abs:(10.1029/2000JE001325) doctype:article",
+    "category": "topic"
+  },
+  {
+    "index": 315,
+    "reason": "p0: docs() hash in query",
+    "natural_language": "papers by Jiang, Haochang on stellar evolution",
+    "ads_query": "-docs(fae339e41c6ddec2ce57344532c091f5) -docs(73de3228168806ca2559b9685f1b5b67) author:\"^Jiang, haochang\" doctype:article",
+    "category": "first_author"
+  },
+  {
+    "index": 469,
+    "reason": "p0: absurd date range (1641)",
+    "natural_language": "laser plasma filament radius energy 1641-2024",
+    "ads_query": "(laser AND plasma AND filament AND radius AND energy) AND year:1641-2024",
+    "category": "publication"
+  },
+  {
+    "index": 480,
+    "reason": "p0: DOI in abs: field",
+    "natural_language": "papers on gamma-ray bursts in astrophysical journal 2010",
+    "ads_query": "abs:(10.1088/0004-637x/719/2/1362) doctype:article",
+    "category": "topic"
+  },
+  {
+    "index": 527,
+    "reason": "p0: off-topic: surgical scalpel design and safety",
+    "natural_language": "surgical scalpel design and safety studies",
+    "ads_query": "abs:(scalpel* AND design AND safety) doctype:article",
+    "category": "topic"
+  },
+  {
+    "index": 603,
+    "reason": "p0: docs() hash in query",
+    "natural_language": "papers by Velazquez P on stellar dynamics",
+    "ads_query": "-docs(3844a6f4140573744e035439305b6dcc) author:(\"Velazquez, P\") doctype:article",
+    "category": "author"
+  },
+  {
+    "index": 667,
+    "reason": "p0: DOI in abs: field",
+    "natural_language": "papers on stellar mass black holes in binary systems",
+    "ads_query": "abs:(10.1088/0004-637X/806/1/129) doctype:article",
+    "category": "topic"
+  },
+  {
+    "index": 775,
+    "reason": "p0: off-topic: coastal erosion human displacement vulne",
+    "natural_language": "coastal erosion human displacement vulnerability Bangladesh",
+    "ads_query": "abs:(Coastlines AND Human AND Displacement AND Erosion)",
+    "category": "topic"
+  },
+  {
+    "index": 799,
+    "reason": "p0: absurd date range (1641)",
+    "natural_language": "sybil attacks intelligent vehicular ad hoc networks review 1641-2024",
+    "ads_query": "(sybil AND attacks AND intelligent AND vehicular AND ad AND hoc AND networks AND review) AND year:1641-2024",
+    "category": "publication"
+  },
+  {
+    "index": 925,
+    "reason": "p0: docs() hash in query",
+    "natural_language": "papers about stellar nucleosynthesis in massive stars",
+    "ads_query": "abs:(docs(0f40bf2f0981ed21baa1abf5e9e26d7f)) doctype:article",
+    "category": "topic"
+  },
+  {
+    "index": 926,
+    "reason": "p0: absurd date range (1641)",
+    "natural_language": "laser plasma filament radius dependence on laser energy",
+    "ads_query": "(laser AND plasma AND filament AND radius AND dependence AND laser AND energy) AND year:1641-2024",
+    "category": "publication"
+  },
+  {
+    "index": 940,
+    "reason": "p0: docs() hash in query",
+    "natural_language": "papers by Guijarro on stellar spectroscopy",
+    "ads_query": "abs:(-docs(712796f9c8c8b65759e619e5c505364a) Guijarro, A.) doctype:article",
+    "category": "topic"
+  },
+  {
+    "index": 955,
+    "reason": "p0: docs(library/) hash in query",
+    "natural_language": "papers citing the Planck satellite cosmology results 2022 onwards",
+    "ads_query": "((docs(library/ZcKIJ9KlSp2s3m2U2l3gUQ)) AND year:2022-) doctype:article",
+    "category": "publication"
+  },
+  {
+    "index": 965,
+    "reason": "p0: off-topic: physics economic growth development nati",
+    "natural_language": "physics economic growth development national policy",
+    "ads_query": "abs:(Explain AND Role AND Physics AND National)",
+    "category": "topic"
+  },
+  {
+    "index": 982,
+    "reason": "p0: off-topic: boresight translation optical alignment",
+    "natural_language": "boresight translation optical alignment papers",
+    "ads_query": "abs:(traduzione di boresight) doctype:article",
+    "category": "topic"
+  },
+  {
+    "index": 1020,
+    "reason": "p0: DOI in abs: field",
+    "natural_language": "papers with DOI 10.1029/2012je004099",
+    "ads_query": "abs:(10.1029/2012je004099) doctype:article",
+    "category": "topic"
+  },
+  {
+    "index": 1277,
+    "reason": "p0: docs() hash in query",
+    "natural_language": "papers about gravitational wave detection methods",
+    "ads_query": "abs:(docs(89e3ae3cf20114ab311371e187d86d58)) doctype:article",
+    "category": "topic"
+  },
+  {
+    "index": 1370,
+    "reason": "p0: docs() hash in query",
+    "natural_language": "papers by Labaj on computational methods",
+    "ads_query": "-docs(5b8345a9cac285004ab999027d429f70) author:\"Labaj\" doctype:article",
+    "category": "author"
+  },
+  {
+    "index": 1444,
+    "reason": "p0: docs() hash in query",
+    "natural_language": "papers by Jiang, Haochang",
+    "ads_query": "-docs(73de3228168806ca2559b9685f1b5b67) author:\"^Jiang, haochang\" doctype:article",
+    "category": "first_author"
+  },
+  {
+    "index": 1478,
+    "reason": "p0: off-topic: electronic payment security",
+    "natural_language": "electronic payment security Solat digital transaction systems",
+    "ads_query": "abs:(Security AND Electronic AND Payment)",
+    "category": "topic"
+  },
+  {
+    "index": 1740,
+    "reason": "p0: DOI in abs: field",
+    "natural_language": "doi 10.1029/2008je003287",
+    "ads_query": "abs:(10.1029/2008je003287)",
+    "category": "topic"
+  },
+  {
+    "index": 2288,
+    "reason": "p0: docs() hash in query",
+    "natural_language": "papers by Lopes P A A excluding two specific documents",
+    "ads_query": "-docs(433bd7ca87c803d6d2ccef5af237e39f) -docs(c2080e938a4ce8d80bbb1dc88d3d902c) author:(\"Lopes, P. A. A.\") doctype:article",
+    "category": "author"
+  },
+  {
+    "index": 2323,
+    "reason": "p0: docs() hash in query",
+    "natural_language": "papers by Simons or Hamilton-Campos on galaxy kinematics",
+    "ads_query": "-docs(976c0f11d229e1224d4574f7c7562f18) -docs(39dddd90c3596d48d075fc3a33fa9be3) -docs(dc81cd95dce2bb9f3234f6b79b77e39d) author:\"^Simons, Raymond C.\" OR author:\"Hamilton-Campos\" doctype:article",
+    "category": "first_author"
+  },
+  {
+    "index": 2477,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "papers about gravitational waves",
+    "ads_query": "title:(gravitational AND waves) doctype:article",
+    "category": "content"
+  },
+  {
+    "index": 2478,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "gravitational waves",
+    "ads_query": "title:\"gravitational waves\"",
+    "category": "content"
+  },
+  {
+    "index": 2482,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "papers about gravitational waves",
+    "ads_query": "body:\"gravitational waves\" doctype:article",
+    "category": "content"
+  },
+  {
+    "index": 2483,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "gravitational waves",
+    "ads_query": "body:\"gravitational waves\"",
+    "category": "content"
+  },
+  {
+    "index": 2487,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "papers about gravitational waves",
+    "ads_query": "full:\"gravitational waves\" doctype:article",
+    "category": "content"
+  },
+  {
+    "index": 2488,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "gravitational waves",
+    "ads_query": "full:\"gravitational waves\"",
+    "category": "content"
+  },
+  {
+    "index": 2498,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "dark energy",
+    "ads_query": "title:\"dark energy\"",
+    "category": "content"
+  },
+  {
+    "index": 2502,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "papers about dark energy",
+    "ads_query": "body:\"dark energy\" doctype:article",
+    "category": "content"
+  },
+  {
+    "index": 2503,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "dark energy",
+    "ads_query": "body:\"dark energy\"",
+    "category": "content"
+  },
+  {
+    "index": 2507,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "papers about dark energy",
+    "ads_query": "full:\"dark energy\" doctype:article",
+    "category": "content"
+  },
+  {
+    "index": 2508,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "dark energy",
+    "ads_query": "full:\"dark energy\"",
+    "category": "content"
+  },
+  {
+    "index": 2517,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "papers about weak lensing",
+    "ads_query": "title:(weak AND lensing) doctype:article",
+    "category": "content"
+  },
+  {
+    "index": 2518,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "weak lensing",
+    "ads_query": "title:\"weak lensing\"",
+    "category": "content"
+  },
+  {
+    "index": 2522,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "papers about weak lensing",
+    "ads_query": "body:\"weak lensing\" doctype:article",
+    "category": "content"
+  },
+  {
+    "index": 2523,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "weak lensing",
+    "ads_query": "body:\"weak lensing\"",
+    "category": "content"
+  },
+  {
+    "index": 2527,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "papers about weak lensing",
+    "ads_query": "full:\"weak lensing\" doctype:article",
+    "category": "content"
+  },
+  {
+    "index": 2528,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "weak lensing",
+    "ads_query": "full:\"weak lensing\"",
+    "category": "content"
+  },
+  {
+    "index": 2537,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "papers about solar wind",
+    "ads_query": "title:(solar AND wind) doctype:article",
+    "category": "content"
+  },
+  {
+    "index": 2538,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "solar wind",
+    "ads_query": "title:\"solar wind\"",
+    "category": "content"
+  },
+  {
+    "index": 2542,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "papers about solar wind",
+    "ads_query": "body:\"solar wind\" doctype:article",
+    "category": "content"
+  },
+  {
+    "index": 2543,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "solar wind",
+    "ads_query": "body:\"solar wind\"",
+    "category": "content"
+  },
+  {
+    "index": 2547,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "papers about solar wind",
+    "ads_query": "full:\"solar wind\" doctype:article",
+    "category": "content"
+  },
+  {
+    "index": 2548,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "solar wind",
+    "ads_query": "full:\"solar wind\"",
+    "category": "content"
+  },
+  {
+    "index": 2558,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "coronal mass ejections",
+    "ads_query": "title:\"coronal mass ejections\"",
+    "category": "content"
+  },
+  {
+    "index": 2562,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "papers about coronal mass ejections",
+    "ads_query": "body:\"coronal mass ejections\" doctype:article",
+    "category": "content"
+  },
+  {
+    "index": 2563,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "coronal mass ejections",
+    "ads_query": "body:\"coronal mass ejections\"",
+    "category": "content"
+  },
+  {
+    "index": 2567,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "papers about coronal mass ejections",
+    "ads_query": "full:\"coronal mass ejections\" doctype:article",
+    "category": "content"
+  },
+  {
+    "index": 2568,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "coronal mass ejections",
+    "ads_query": "full:\"coronal mass ejections\"",
+    "category": "content"
+  },
+  {
+    "index": 2578,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "infrared astronomy",
+    "ads_query": "title:\"infrared astronomy\"",
+    "category": "content"
+  },
+  {
+    "index": 2582,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "papers about infrared astronomy",
+    "ads_query": "body:\"infrared astronomy\" doctype:article",
+    "category": "content"
+  },
+  {
+    "index": 2583,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "infrared astronomy",
+    "ads_query": "body:\"infrared astronomy\"",
+    "category": "content"
+  },
+  {
+    "index": 2587,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "papers about infrared astronomy",
+    "ads_query": "full:\"infrared astronomy\" doctype:article",
+    "category": "content"
+  },
+  {
+    "index": 2588,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "infrared astronomy",
+    "ads_query": "full:\"infrared astronomy\"",
+    "category": "content"
+  },
+  {
+    "index": 2598,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "exoplanets",
+    "ads_query": "title:\"exoplanets\"",
+    "category": "content"
+  },
+  {
+    "index": 2602,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "papers about exoplanets",
+    "ads_query": "body:\"exoplanets\" doctype:article",
+    "category": "content"
+  },
+  {
+    "index": 2603,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "exoplanets",
+    "ads_query": "body:\"exoplanets\"",
+    "category": "content"
+  },
+  {
+    "index": 2607,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "papers about exoplanets",
+    "ads_query": "full:\"exoplanets\" doctype:article",
+    "category": "content"
+  },
+  {
+    "index": 2608,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "exoplanets",
+    "ads_query": "full:\"exoplanets\"",
+    "category": "content"
+  },
+  {
+    "index": 2618,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "interstellar medium",
+    "ads_query": "title:\"interstellar medium\"",
+    "category": "content"
+  },
+  {
+    "index": 2622,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "papers about interstellar medium",
+    "ads_query": "body:\"interstellar medium\" doctype:article",
+    "category": "content"
+  },
+  {
+    "index": 2623,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "interstellar medium",
+    "ads_query": "body:\"interstellar medium\"",
+    "category": "content"
+  },
+  {
+    "index": 2627,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "papers about interstellar medium",
+    "ads_query": "full:\"interstellar medium\" doctype:article",
+    "category": "content"
+  },
+  {
+    "index": 2628,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "interstellar medium",
+    "ads_query": "full:\"interstellar medium\"",
+    "category": "content"
+  },
+  {
+    "index": 2638,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "cosmic microwave background",
+    "ads_query": "title:\"cosmic microwave background\"",
+    "category": "content"
+  },
+  {
+    "index": 2642,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "papers about cosmic microwave background",
+    "ads_query": "body:\"cosmic microwave background\" doctype:article",
+    "category": "content"
+  },
+  {
+    "index": 2643,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "cosmic microwave background",
+    "ads_query": "body:\"cosmic microwave background\"",
+    "category": "content"
+  },
+  {
+    "index": 2647,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "papers about cosmic microwave background",
+    "ads_query": "full:\"cosmic microwave background\" doctype:article",
+    "category": "content"
+  },
+  {
+    "index": 2648,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "cosmic microwave background",
+    "ads_query": "full:\"cosmic microwave background\"",
+    "category": "content"
+  },
+  {
+    "index": 2658,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "magnetosphere",
+    "ads_query": "title:\"magnetosphere\"",
+    "category": "content"
+  },
+  {
+    "index": 2662,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "papers about magnetosphere",
+    "ads_query": "body:\"magnetosphere\" doctype:article",
+    "category": "content"
+  },
+  {
+    "index": 2663,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "magnetosphere",
+    "ads_query": "body:\"magnetosphere\"",
+    "category": "content"
+  },
+  {
+    "index": 2667,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "papers about magnetosphere",
+    "ads_query": "full:\"magnetosphere\" doctype:article",
+    "category": "content"
+  },
+  {
+    "index": 2668,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "magnetosphere",
+    "ads_query": "full:\"magnetosphere\"",
+    "category": "content"
+  },
+  {
+    "index": 2678,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "planetary atmospheres",
+    "ads_query": "title:\"planetary atmospheres\"",
+    "category": "content"
+  },
+  {
+    "index": 2682,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "papers about planetary atmospheres",
+    "ads_query": "body:\"planetary atmospheres\" doctype:article",
+    "category": "content"
+  },
+  {
+    "index": 2683,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "planetary atmospheres",
+    "ads_query": "body:\"planetary atmospheres\"",
+    "category": "content"
+  },
+  {
+    "index": 2687,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "papers about planetary atmospheres",
+    "ads_query": "full:\"planetary atmospheres\" doctype:article",
+    "category": "content"
+  },
+  {
+    "index": 2688,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "planetary atmospheres",
+    "ads_query": "full:\"planetary atmospheres\"",
+    "category": "content"
+  },
+  {
+    "index": 2697,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "papers about asteroid composition",
+    "ads_query": "title:(asteroid AND composition) doctype:article",
+    "category": "content"
+  },
+  {
+    "index": 2698,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "asteroid composition",
+    "ads_query": "title:\"asteroid composition\"",
+    "category": "content"
+  },
+  {
+    "index": 2702,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "papers about asteroid composition",
+    "ads_query": "body:\"asteroid composition\" doctype:article",
+    "category": "content"
+  },
+  {
+    "index": 2703,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "asteroid composition",
+    "ads_query": "body:\"asteroid composition\"",
+    "category": "content"
+  },
+  {
+    "index": 2707,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "papers about asteroid composition",
+    "ads_query": "full:\"asteroid composition\" doctype:article",
+    "category": "content"
+  },
+  {
+    "index": 2708,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "asteroid composition",
+    "ads_query": "full:\"asteroid composition\"",
+    "category": "content"
+  },
+  {
+    "index": 2717,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "papers about stellar winds",
+    "ads_query": "title:(stellar AND winds) doctype:article",
+    "category": "content"
+  },
+  {
+    "index": 2718,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "stellar winds",
+    "ads_query": "title:\"stellar winds\"",
+    "category": "content"
+  },
+  {
+    "index": 2722,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "papers about stellar winds",
+    "ads_query": "body:\"stellar winds\" doctype:article",
+    "category": "content"
+  },
+  {
+    "index": 2723,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "stellar winds",
+    "ads_query": "body:\"stellar winds\"",
+    "category": "content"
+  },
+  {
+    "index": 2727,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "papers about stellar winds",
+    "ads_query": "full:\"stellar winds\" doctype:article",
+    "category": "content"
+  },
+  {
+    "index": 2728,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "stellar winds",
+    "ads_query": "full:\"stellar winds\"",
+    "category": "content"
+  },
+  {
+    "index": 2738,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "mars atmosphere",
+    "ads_query": "title:\"mars atmosphere\"",
+    "category": "content"
+  },
+  {
+    "index": 2742,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "papers about mars atmosphere",
+    "ads_query": "body:\"mars atmosphere\" doctype:article",
+    "category": "content"
+  },
+  {
+    "index": 2743,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "mars atmosphere",
+    "ads_query": "body:\"mars atmosphere\"",
+    "category": "content"
+  },
+  {
+    "index": 2747,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "papers about mars atmosphere",
+    "ads_query": "full:\"mars atmosphere\" doctype:article",
+    "category": "content"
+  },
+  {
+    "index": 2748,
+    "reason": "p1: cross-product duplicate",
+    "natural_language": "mars atmosphere",
+    "ads_query": "full:\"mars atmosphere\"",
+    "category": "content"
+  },
+  {
+    "index": 4400,
+    "reason": "p5: excess OA subtype",
+    "natural_language": "show me papers with ADS open access",
+    "ads_query": "property:ads_openaccess doctype:article",
+    "category": "property"
+  },
+  {
+    "index": 4401,
+    "reason": "p5: excess OA subtype",
+    "natural_language": "ADS open access papers",
+    "ads_query": "property:ads_openaccess doctype:article",
+    "category": "property"
+  },
+  {
+    "index": 4402,
+    "reason": "p5: excess OA subtype",
+    "natural_language": "show me open access from ADS",
+    "ads_query": "property:ads_openaccess",
+    "category": "property"
+  },
+  {
+    "index": 4406,
+    "reason": "p5: excess OA subtype",
+    "natural_language": "peer-reviewed ADS open access papers",
+    "ads_query": "property:ads_openaccess property:refereed doctype:article",
+    "category": "property"
+  },
+  {
+    "index": 4407,
+    "reason": "p5: excess OA subtype",
+    "natural_language": "author-submitted open access papers",
+    "ads_query": "property:author_openaccess doctype:article",
+    "category": "property"
+  },
+  {
+    "index": 4408,
+    "reason": "p5: excess OA subtype",
+    "natural_language": "show me papers with author-provided open access",
+    "ads_query": "property:author_openaccess doctype:article",
+    "category": "property"
+  },
+  {
+    "index": 4409,
+    "reason": "p5: excess OA subtype",
+    "natural_language": "I want author open access versions",
+    "ads_query": "property:author_openaccess",
+    "category": "property"
+  },
+  {
+    "index": 4413,
+    "reason": "p5: excess OA subtype",
+    "natural_language": "papers with author-provided open access from 2018",
+    "ads_query": "property:author_openaccess year:2018 doctype:article",
+    "category": "property"
+  },
+  {
+    "index": 4415,
+    "reason": "p5: excess OA subtype",
+    "natural_language": "get preprint open access papers",
+    "ads_query": "property:eprint_openaccess doctype:article",
+    "category": "property"
+  },
+  {
+    "index": 4416,
+    "reason": "p5: excess OA subtype",
+    "natural_language": "looking for open access from preprint servers",
+    "ads_query": "property:eprint_openaccess",
+    "category": "property"
+  },
+  {
+    "index": 4417,
+    "reason": "p5: excess OA subtype",
+    "natural_language": "open access preprints about extragalactic astronomy",
+    "ads_query": "property:eprint_openaccess abs:\"extragalactic astronomy\"",
+    "category": "property"
+  },
+  {
+    "index": 4419,
+    "reason": "p5: excess OA subtype",
+    "natural_language": "eprint open access versions by Williams",
+    "ads_query": "property:eprint_openaccess author:\"Williams\"",
+    "category": "property"
+  },
+  {
+    "index": 4421,
+    "reason": "p5: excess OA subtype",
+    "natural_language": "get publisher open access papers",
+    "ads_query": "property:pub_openaccess doctype:article",
+    "category": "property"
+  },
+  {
+    "index": 4422,
+    "reason": "p5: excess OA subtype",
+    "natural_language": "I want papers with publisher open access",
+    "ads_query": "property:pub_openaccess doctype:article",
+    "category": "property"
+  },
+  {
+    "index": 4423,
+    "reason": "p5: excess OA subtype",
+    "natural_language": "show me open access from publishers",
+    "ads_query": "property:pub_openaccess",
+    "category": "property"
+  },
+  {
+    "index": 4427,
+    "reason": "p5: excess OA subtype",
+    "natural_language": "papers with publisher open access published in 2021",
+    "ads_query": "property:pub_openaccess year:2021 doctype:article",
+    "category": "property"
+  },
+  {
+    "natural_language": "papers excluding solar system studies",
+    "ads_query": "abs:\"exoplanet\" NOT abs:\"solar system\" doctype:article",
+    "category": "compound",
+    "_removal_reason": "synonym_expansion_or_fabricated_abs"
+  },
+  {
+    "natural_language": "articles by Salama on polycyclic aromatic hydrocarbons",
+    "ads_query": "author:\"Salama\" abs:\", Farid\" doctype:article",
+    "category": "topic",
+    "_removal_reason": "synonym_expansion_or_fabricated_abs"
+  },
+  {
+    "natural_language": "papers with associated data",
+    "ads_query": "abs:\"exoplanet\" property:data doctype:article",
+    "category": "property",
+    "_removal_reason": "synonym_expansion_or_fabricated_abs"
+  },
+  {
+    "natural_language": "moving boundary electrophoresis methods and applications",
+    "ads_query": "abs:(\"moving boundary electrophoresis\" AND (method* OR technique* OR application*))",
+    "category": "topic",
+    "_removal_reason": "synonym_expansion_or_fabricated_abs"
+  },
+  {
+    "natural_language": "work by Sivanandam on stellar streams and globular clusters",
+    "ads_query": "author:\"Sivanandam, Suresh\" AND (abs:\"stream\" OR abs:\"star cluster\" OR abs:\"globular cluster\" OR abs:\"dwarf\") doctype:article",
+    "category": "author",
+    "_removal_reason": "synonym_expansion_or_fabricated_abs"
+  },
+  {
+    "natural_language": "Vera Rubin Observatory near earth objects",
+    "ads_query": "abs:(\"Vera Rubin\" AND (NEO OR \"near earth object\" OR \"near-earth object\" OR \"near earth objects\"))",
+    "category": "topic",
+    "_removal_reason": "synonym_expansion_or_fabricated_abs"
+  },
+  {
+    "natural_language": "asteroid detection surveys near earth objects",
+    "ads_query": "abs:((asteroid* OR asteroids) AND (detection OR discovery OR survey*) AND (\"near-earth object*\" OR NEO*))",
+    "category": "topic",
+    "_removal_reason": "synonym_expansion_or_fabricated_abs"
+  },
+  {
+    "natural_language": "articles by Haehnelt and Rees on cosmology",
+    "ads_query": "author:\"Haehnelt\" abs:\",martin','rees, martin'\" doctype:article",
+    "category": "topic",
+    "_removal_reason": "synonym_expansion_or_fabricated_abs"
+  },
+  {
+    "natural_language": "pyrogallol effects on catfish hematology biochemistry",
+    "ads_query": "abs:(pyrogallol AND catfish AND (hematology OR haematology) AND biochemistry)",
+    "category": "topic",
+    "_removal_reason": "synonym_expansion_or_fabricated_abs"
+  },
+  {
+    "natural_language": "stellar limb darkening measurements",
+    "ads_query": "abs:(stellar AND \"limb darkening\" AND (measurement OR measurements))",
+    "category": "topic",
+    "_removal_reason": "synonym_expansion_or_fabricated_abs"
+  },
+  {
+    "natural_language": "software developer adoption barriers static analysis tools bug detection",
+    "ads_query": "abs:(\"static analysis\" AND (adoption OR barriers) AND (\"bug detection\" OR bugs))",
+    "category": "content",
+    "_removal_reason": "synonym_expansion_or_fabricated_abs"
+  },
+  {
+    "natural_language": "research by Vega-Ferrero",
+    "ads_query": "author:\"Vega\" abs:\"author=-Ferrero\" doctype:article",
+    "category": "topic",
+    "_removal_reason": "synonym_expansion_or_fabricated_abs"
+  },
+  {
+    "natural_language": "narrowband radio signals from extraterrestrial intelligence",
+    "ads_query": "abs:(narrowband AND radio AND (signal* OR emission*) AND (technosignature* OR \"extraterrestrial intelligence\" OR SETI))",
+    "category": "topic",
+    "_removal_reason": "synonym_expansion_or_fabricated_abs"
+  },
+  {
+    "natural_language": "counter-rotating disk galaxies IllustrisTNG simulations observational counterparts",
+    "ads_query": "abs:(\"counter-rotating\" AND disk AND galaxies AND IllustrisTNG AND (observational OR observations OR counterpart*))",
+    "category": "topic",
+    "_removal_reason": "synonym_expansion_or_fabricated_abs"
+  },
+  {
+    "natural_language": "publications by abraham roberto on stellar streams and star clusters",
+    "ads_query": "author:\"abraham, roberto\" AND (abs:\"stream\" OR abs:\"star cluster\" OR abs:\"globular cluster\" OR abs:\"dwarf\") doctype:article",
+    "category": "author",
+    "_removal_reason": "synonym_expansion_or_fabricated_abs"
+  },
+  {
+    "natural_language": "TeV blazar observations and multiwavelength studies",
+    "ads_query": "abs:(TeV AND blazar* AND (multiwavelength OR \"multi-wavelength\") AND (observation* OR study OR studies)) doctype:article",
+    "category": "topic",
+    "_removal_reason": "synonym_expansion_or_fabricated_abs"
+  },
+  {
+    "natural_language": "work by Laurie Rousseau-Nepton on stellar streams and star clusters",
+    "ads_query": "author:\"Rousseau-Nepton, laurie\" AND (abs:\"stream\" OR abs:\"star cluster\" OR abs:\"globular cluster\" OR abs:\"dwarf\") doctype:article",
+    "category": "author",
+    "_removal_reason": "synonym_expansion_or_fabricated_abs"
+  },
+  {
+    "natural_language": "work by Morales-Olivares",
+    "ads_query": "author:\"Morales\" abs:\"-Olivares, O.G\" doctype:article",
+    "category": "topic",
+    "_removal_reason": "synonym_expansion_or_fabricated_abs"
+  },
+  {
+    "natural_language": "research by abraham roberto on stellar streams and galaxy clusters",
+    "ads_query": "author:\"abraham, roberto\" AND (abs:\"stream\" OR abs:\"cluster\" OR abs:\"dwarf\" OR abs:\"subhalo\") doctype:article",
+    "category": "author",
+    "_removal_reason": "synonym_expansion_or_fabricated_abs"
+  },
+  {
+    "natural_language": "papers on oneAPI Threading Building Blocks oneTBB parallel computing",
+    "ads_query": "abs:(\"oneTBB\" OR \"Threading Building Blocks\" OR \"oneAPI Threading Building Blocks\") AND abs:(parallel OR concurrency OR multithread*) doctype:article",
+    "category": "content",
+    "_removal_reason": "synonym_expansion_or_fabricated_abs"
+  },
+  {
+    "natural_language": "papers about Oumuamua and other interstellar visitors",
+    "ads_query": "abs:(Oumuamua AND (interstellar OR \"interstellar object*\" OR visitor*)) doctype:article",
+    "category": "topic",
+    "_removal_reason": "synonym_expansion_or_fabricated_abs"
+  },
+  {
+    "natural_language": "articles that have bibliographic group assignments",
+    "ads_query": "has:bibgroup abs:\"galaxy survey\" doctype:article",
+    "category": "filters",
+    "_removal_reason": "synonym_expansion_or_fabricated_abs"
+  },
+  {
+    "natural_language": "papers with ORCID identifiers from other sources",
+    "ads_query": "has:orcid_other abs:\"exoplanet\"",
+    "category": "filters",
+    "_removal_reason": "synonym_expansion_or_fabricated_abs"
+  },
+  {
+    "natural_language": "papers that have database assignments in astronomy",
+    "ads_query": "has:database abs:\"stellar populations\" doctype:article",
+    "category": "filters",
+    "_removal_reason": "synonym_expansion_or_fabricated_abs"
+  }
+]

@@ -85,10 +85,69 @@ def _validate_enum_values(field: str, values: set[str]) -> set[str]:
     return valid_values
 
 
+def _wildcard_complex_author(name: str) -> str:
+    """Add trailing wildcard to complex author names for fuzzy matching.
+
+    Names with hyphens or apostrophes in the surname have inconsistent ADS
+    indexing (e.g., "de Groot-Hedlin" vs "de GrootHedlin"). Truncating at the
+    first hyphen/apostrophe and appending ``*`` catches both variants.
+
+    Simple names (e.g., "Hawking", "Hawking, S") are returned unchanged.
+
+    Examples::
+
+        "de Groot-Hedlin"  -> "de Groot*"       # catches de GrootHedlin too
+        "Garcia-Perez"     -> "Garcia*"          # catches GarciaPerez too
+        "Le Floc'h"        -> "Le Floc*"         # catches Le Floch too
+        "El-Badry"         -> "El-Badry*"        # trailing * is harmless
+        "Hawking"          -> "Hawking"           # no change
+        "^Hawking"         -> "^Hawking"          # first-author caret preserved
+
+    Args:
+        name: Author name as extracted by NER
+
+    Returns:
+        Name with trailing wildcard if complex, otherwise unchanged
+    """
+    # Preserve first-author caret prefix
+    prefix = ""
+    working = name
+    if working.startswith("^"):
+        prefix = "^"
+        working = working[1:]
+
+    # Skip names that already have wildcards or are in "Last, F" format
+    if "*" in working or "," in working:
+        return name
+
+    # Find first hyphen or apostrophe in the name (complexity marker)
+    hyphen_pos = working.find("-")
+    apos_pos = working.find("'")
+
+    # Pick the earliest complexity marker
+    positions = [p for p in (hyphen_pos, apos_pos) if p > 0]
+    if not positions:
+        return name  # Simple name, no change
+
+    cut_pos = min(positions)
+
+    # If the hyphen is at position 2-3 (like "El-Badry"), keep it and just
+    # add trailing wildcard — truncating would be too aggressive
+    part_before = working[:cut_pos]
+    if len(part_before.split()[-1]) <= 3:
+        # Short prefix before marker (El-, Le-, al-): keep full name + *
+        return f"{prefix}{working}*"
+
+    # Truncate at the complexity marker and wildcard
+    return f"{prefix}{working[:cut_pos]}*"
+
+
 def _build_author_clause(authors: Sequence[str]) -> str:
     """Build author search clause.
 
     Formats author names for ADS syntax: author:"Last, F"
+    Complex names (hyphens, apostrophes) get a trailing wildcard to handle
+    inconsistent ADS indexing variants.
 
     Args:
         authors: List of author names
@@ -101,6 +160,8 @@ def _build_author_clause(authors: Sequence[str]) -> str:
 
     clauses = []
     for author in authors:
+        # Apply wildcard to complex names for fuzzy matching
+        author = _wildcard_complex_author(author)
         # Always quote author names
         clauses.append(f'author:"{author}"')
 
@@ -212,7 +273,11 @@ def _build_object_clause(objects: Sequence[str]) -> str:
 
 
 def _build_affiliation_clause(affiliations: Sequence[str]) -> str:
-    """Build affiliation search clause.
+    """Build affiliation search clause using institution lookup.
+
+    Uses build_inst_or_aff_clause to produce (inst:"X" OR aff:"Y") clauses
+    when the affiliation matches a known institution. Falls back to plain
+    aff:"Y" for unknown affiliations.
 
     Args:
         affiliations: List of institutional affiliations
@@ -223,14 +288,31 @@ def _build_affiliation_clause(affiliations: Sequence[str]) -> str:
     if not affiliations:
         return ""
 
-    clauses = []
-    for aff in affiliations:
-        # Affiliations are typically multi-word, always quote
-        clauses.append(f'aff:"{aff}"')
+    from .institution_lookup import build_inst_or_aff_clause
+
+    clauses = [build_inst_or_aff_clause(aff) for aff in affiliations]
 
     if len(clauses) == 1:
         return clauses[0]
     return " ".join(clauses)
+
+
+def _build_bibstem_clause(bibstems: Sequence[str]) -> str:
+    """Build bibstem search clause.
+
+    Args:
+        bibstems: List of bibstem abbreviations (e.g. ["ApJ", "MNRAS"])
+
+    Returns:
+        Bibstem clause string, or empty string if no bibstems
+    """
+    if not bibstems:
+        return ""
+
+    clauses = [f'bibstem:"{b}"' for b in bibstems]
+    if len(clauses) == 1:
+        return clauses[0]
+    return "(" + " OR ".join(clauses) + ")"
 
 
 def _wrap_with_operator(query: str, operator: str) -> str:
@@ -314,11 +396,22 @@ def assemble_query(intent: IntentSpec, examples: list[GoldExample] | None = None
         if object_clause:
             clauses.append(object_clause)
 
+    # Build planetary feature clause
+    if intent.planetary_features:
+        for pf in intent.planetary_features:
+            clauses.append(f'planetary_feature:"{pf}"')
+
     # Build affiliation clause
     if intent.affiliations:
         aff_clause = _build_affiliation_clause(intent.affiliations)
         if aff_clause:
             clauses.append(aff_clause)
+
+    # Build bibstem clause
+    if intent.bibstems:
+        bibstem_clause = _build_bibstem_clause(intent.bibstems)
+        if bibstem_clause:
+            clauses.append(bibstem_clause)
 
     # Build enum-constrained field clauses
     for field_name in ("doctype", "property", "collection", "bibgroup", "esources", "data"):
@@ -331,6 +424,65 @@ def assemble_query(intent: IntentSpec, examples: list[GoldExample] | None = None
                 # Count valid values
                 valid_values = _validate_enum_values(field_name, values)
                 constraint_count_after += len(valid_values)
+
+    # Build title clause
+    if intent.title_terms:
+        for term in intent.title_terms:
+            quoted = _quote_value(term)
+            clauses.append(f"title:{quoted}")
+
+    # Build full-text clause
+    if intent.full_text_terms:
+        for term in intent.full_text_terms:
+            quoted = _quote_value(term)
+            clauses.append(f"full:{quoted}")
+
+    # Build has: clause
+    if intent.has_fields:
+        for h in sorted(intent.has_fields):
+            clauses.append(f"has:{h}")
+
+    # Build citation_count range
+    if intent.citation_count_min is not None or intent.citation_count_max is not None:
+        lo = str(intent.citation_count_min) if intent.citation_count_min is not None else "*"
+        hi = str(intent.citation_count_max) if intent.citation_count_max is not None else "*"
+        clauses.append(f"citation_count:[{lo} TO {hi}]")
+
+    # Build read_count range
+    if intent.read_count_min is not None:
+        clauses.append(f"read_count:[{intent.read_count_min} TO *]")
+
+    # Build ack clause
+    if intent.ack_terms:
+        for term in intent.ack_terms:
+            quoted = _quote_value(term)
+            clauses.append(f"ack:{quoted}")
+
+    # Build grant clause
+    if intent.grant_terms:
+        for term in intent.grant_terms:
+            clauses.append(f"grant:{term}")
+
+    # Build exact match clauses (=field:"value")
+    if intent.exact_match_fields:
+        for fld, val in intent.exact_match_fields.items():
+            clauses.append(f'={fld}:"{val}"')
+
+    # Build negation clauses
+    if intent.negated_terms:
+        for term in intent.negated_terms:
+            quoted = _quote_value(term)
+            clauses.append(f"NOT abs:{quoted}")
+    if intent.negated_properties:
+        for prop in sorted(intent.negated_properties):
+            clauses.append(f"NOT property:{prop}")
+    if intent.negated_doctypes:
+        for dt in sorted(intent.negated_doctypes):
+            clauses.append(f"NOT doctype:{dt}")
+
+    # Append passthrough clauses (complex patterns the parser couldn't decompose)
+    if intent.passthrough_clauses:
+        clauses.extend(intent.passthrough_clauses)
 
     # Join all clauses with space (implicit AND)
     base_query = " ".join(clauses)
@@ -407,3 +559,28 @@ def validate_query_syntax(query: str) -> tuple[bool, list[str]]:
             errors.append(f"Malformed operator pattern found: {pattern}")
 
     return len(errors) == 0, errors
+
+
+# Regex to find author:"..." clauses in a raw query string
+_AUTHOR_CLAUSE_RE = re.compile(r'author:"([^"]+)"')
+
+
+def rewrite_complex_author_wildcards(query: str) -> str:
+    """Post-process an LLM-generated query to wildcard complex author names.
+
+    Finds all ``author:"..."`` clauses and applies the same wildcarding logic
+    used in the NER assembler path. This ensures consistent handling of
+    hyphenated/particle names regardless of which path generated the query.
+
+    Args:
+        query: Raw query string (e.g., from LLM output)
+
+    Returns:
+        Query with complex author names wildcarded
+    """
+    def _replace(match: re.Match) -> str:
+        name = match.group(1)
+        wildcarded = _wildcard_complex_author(name)
+        return f'author:"{wildcarded}"'
+
+    return _AUTHOR_CLAUSE_RE.sub(_replace, query)

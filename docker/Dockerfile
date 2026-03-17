@@ -25,10 +25,16 @@ COPY packages/finetune/src/finetune /app/finetune
 COPY docker/server.py /app/server.py
 COPY data/datasets/raw/gold_examples.json /app/data/gold_examples.json
 
+# Copy data files needed at runtime
+COPY data/model/institution_synonyms.json /app/data/model/institution_synonyms.json
+COPY data/model/bibstem_synonyms.json /app/data/model/bibstem_synonyms.json
+COPY data/model/uat_synonyms.json /app/data/model/uat_synonyms.json
+
 # Environment variables
-ENV MODEL_NAME=adsabs/scix-nls-translator
+ENV MODEL_NAME=adsabs/NLQT-Qwen3-1.7B
 ENV DEVICE=cuda
 ENV PORT=8000
+ENV HYBRID_MODE=true
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \

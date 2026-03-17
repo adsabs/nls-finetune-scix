@@ -1,46 +1,44 @@
 {
-  "original_count": 4002,
+  "original_count": 4938,
   "curated_files": {
     "curated_bibgroup_examples.json": {
       "total": 328,
-      "duplicates": 0,
-      "added": 328,
+      "duplicates": 328,
+      "added": 0,
       "category": "bibgroup"
     },
     "curated_collection_examples.json": {
       "total": 88,
-      "duplicates": 0,
-      "added": 88,
+      "duplicates": 87,
+      "added": 1,
       "category": "collection"
     },
     "curated_doctype_examples.json": {
       "total": 91,
-      "duplicates": 0,
-      "added": 91,
+      "duplicates": 91,
+      "added": 0,
       "category": "doctype"
     },
     "curated_operator_examples.json": {
       "total": 141,
-      "duplicates": 1,
-      "added": 140,
+      "duplicates": 140,
+      "added": 1,
       "category": "operator"
     },
     "curated_property_examples.json": {
       "total": 140,
-      "duplicates": 0,
-      "added": 140,
+      "duplicates": 138,
+      "added": 2,
       "category": "property"
     }
   },
   "total_curated": 788,
-  "duplicates_skipped": 1,
-  "examples_added": 787,
+  "duplicates_skipped": 784,
+  "examples_added": 4,
   "by_category": {
-    "bibgroup": 328,
-    "collection": 88,
-    "doctype": 91,
-    "operator": 140,
-    "property": 140
+    "collection": 1,
+    "operator": 1,
+    "property": 2
   },
-  "final_count": 4789
+  "final_count": 4942
 }

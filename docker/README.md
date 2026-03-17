@@ -7,8 +7,8 @@ Run the NLS (Natural Language Search) model locally.
 ### Option 1: Local Python (Recommended for Mac)
 
 ```bash
-# Install dependencies
-pip install torch transformers accelerate fastapi uvicorn
+# Install dependencies (transformers>=5.2.0 for Qwen3.5; unsloth for Unsloth-trained adapters)
+pip install -r docker/requirements.txt
 
 # Run server (auto-detects MPS/CUDA/CPU)
 ./docker/run_local.sh
@@ -61,10 +61,12 @@ cd ~/ads-dev/nectar && pnpm dev
 
 | Endpoint | Method | Description |
 |----------|--------|-------------|
-| `/health` | GET | Health check |
+| `/health` | GET | Health check (includes `hybrid_mode` status) |
 | `/v1/models` | GET | List models (OpenAI-compatible) |
-| `/v1/chat/completions` | POST | vLLM-compatible chat endpoint |
-| `/pipeline` | POST | Hybrid NER pipeline endpoint |
+| `/v1/chat/completions` | POST | vLLM-compatible chat endpoint (hybrid when enabled) |
+| `/pipeline` | POST | Hybrid NER+NLS pipeline endpoint |
+| `/debug/pipeline` | GET | Debug NER pipeline only (e.g., `?q=dark+matter+papers`) |
+| `/debug/hybrid` | GET | Debug hybrid merge details (NER + NLS + merge metadata) |
 
 ### Example Requests
 
@@ -132,9 +134,18 @@ For beta testing with other users:
 
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `MODEL_NAME` | `adsabs/scix-nls-translator` | HuggingFace model to load |
+| `MODEL_NAME` | `adsabs/NLQT-Qwen3-1.7B` | HuggingFace model to load |
 | `DEVICE` | auto-detect | `cuda`, `mps`, or `cpu` |
 | `PORT` | `8000` | Server port |
+| `HYBRID_MODE` | `true` | Enable NER+NLS hybrid merge. Set `false` for NER-only when pipeline available |
+
+### Model options
+
+| Model | `MODEL_NAME` |
+|-------|--------------|
+| NLQT Qwen3 1.7B (default) | `adsabs/NLQT-Qwen3-1.7B` |
+| NLQT Qwen3.5 2B | `adsabs/NLQT-Qwen3.5-2B` |
+| Legacy | `adsabs/scix-nls-translator` |
 
 ## Performance
 

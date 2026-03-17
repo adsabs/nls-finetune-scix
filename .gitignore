@@ -1,6 +1,10 @@
+# MCP config (contains API keys)
+.mcp.json
+
 # Dependencies
 node_modules/
 .venv/
+nls/
 __pycache__/
 *.pyc
 

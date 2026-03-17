@@ -51,7 +51,7 @@ description = "Start fine-tuned model server (port 8001)"
 run = """
 #!/usr/bin/env bash
 set -e
-export MODEL_NAME="${MODEL_NAME:-adsabs/scix-nls-translator}"
+export MODEL_NAME="${MODEL_NAME:-adsabs/NLQT-Qwen3-1.7B}"
 export PORT=8001
 export PYTHONPATH="$PWD/packages/finetune/src:$PYTHONPATH"
 
